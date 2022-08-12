@@ -1,0 +1,17 @@
+.Footer{
+  width: 360px;
+  height: 67px;
+  background-color:  rgb(213, 211, 211);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.images{
+  width: 150px;
+  height: 18px;
+  background-image: url(./dh.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
