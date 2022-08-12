@@ -7,15 +7,15 @@ import { UilBars } from '@iconscout/react-unicons'
 
 export default function Header() {
   return (
-    <div className='header'>
+    <div className='Header'>
       <a 
-        href=""><UilPrevious size="40" color="black" />
+        href="#"><UilPrevious size="40" color="black" />
       </a>
       <h1>
         TEAM LIGHT
       </h1>
       <a 
-        href=""><UilBars size="40" color="black" />
+        href="#"><UilBars size="40" color="black" />
       </a>
     </div>
   )

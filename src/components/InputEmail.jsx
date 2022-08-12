@@ -5,7 +5,7 @@ import './InputEmail.css'
 export default function InputEmail() {
   return (
     <div>
-      <input type="text" placeholder='EMAIL'/>
+      <input className='InputEmail' type="text" placeholder='EMAIL'/>
     </div>
   )
 }

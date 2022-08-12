@@ -1,7 +1,7 @@
-.header{
+.Header{
   width: 360px;
   height: 67px;
-  background-color: #E9ECEF;
+  background-color: rgb(213, 211, 211);
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
@@ -9,7 +9,4 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
   font-weight: 600px;
-}
-.header h1{
-  
 }
