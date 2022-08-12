@@ -1,12 +1,15 @@
 
 import './App.css';
-import ButtonEmail from './components/ButtonEmail';
+
+import InputEmail from './components/InputEmail';
 import ButtonLogin from './components/ButtonLogin';
+import InputSenha from './components/InputSenha';
 
 function App() {
   return (
     <div className="App">
-     <ButtonEmail>Hello</ButtonEmail>
+     <InputEmail />
+     <InputSenha />
      <ButtonLogin>Entrar</ButtonLogin>
     </div>
   );
