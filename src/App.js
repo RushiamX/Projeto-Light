@@ -12,14 +12,19 @@ function App() {
     <div className="App">
       <div className="App__header">
         <Header />
-        </div>
-      <div className='App__grey-box'>
-        <div className='App__main'>
-          <InputEmail />
-          <InputSenha />
-          <ButtonLogin>Entrar</ButtonLogin>
-        </div> 
       </div>
+      <div className='center'>
+        <div className='wave'></div>
+        <div className='App__grey-box'>
+          <div className='App__main'>
+            <InputEmail />
+            <InputSenha />
+            <ButtonLogin>Entrar</ButtonLogin>
+          </div> 
+        </div>
+
+      </div>
+      
       <div className='App__footer'>
           <Footer />
       </div>
