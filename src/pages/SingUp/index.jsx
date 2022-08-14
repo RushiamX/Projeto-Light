@@ -9,6 +9,10 @@ export default function SignUp() {
     return(
     <Container>
             <Header/>
+            <div className="group__waves">
+            <Waves/>
+
+            </div>
             <main>
                 <CardFormCadastro/>
             </main>
