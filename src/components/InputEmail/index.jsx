@@ -1,11 +1,11 @@
 import React from 'react'
 
-import './InputEmail.css'
+import './styles.css'
 
 export default function InputEmail() {
   return (
     <div>
-      <input className='InputEmail' type="text" placeholder='EMAIL'/>
+      <input className='inputEmail' type="text" placeholder='E-Mail'/>
     </div>
   )
 }
