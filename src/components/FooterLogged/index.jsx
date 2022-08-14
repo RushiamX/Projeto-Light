@@ -1,18 +1,25 @@
 import React from 'react'
 import './styles.css'
-import greenLeaf from '../../assets/images/energySaving.png'
-import dhLogo from '../../assets/images/dh.png'
-import teamLight from '../../assets/images/teamLight.png'
+import UserBtn from '../../assets/images/user.png'
+import ClockBtn from '../../assets/images/clock-history.png'
+import CalculatorBtn from '../../assets/images/calculator.png'
+
+
 
 export default function FooterLogged() {
   return (
-    <div className='Footer'>
-      <img className='footer__greenLeaf' src={greenLeaf} alt="folha verde" />
-      <div className="footer__title-group">
-      <img className='footer__logo' src={dhLogo} alt="logo dh" />
-      <p className='footer__text'>Powered By Team Light - Front End 2022</p>
+    
+      <div className='FooterL'>
+        <a className='btnFooter' href="#">
+          <img src={UserBtn} alt="user" />
+        </a>
+        <a className='btnFooter' href="#">
+          <img src={ClockBtn} alt="historico" />
+        </a>
+        <a className='btnFooter' href="#">
+          <img src={CalculatorBtn} alt="calculadora" />
+        </a>
       </div>
-      
-    </div>
+
   )
 }
