@@ -1,0 +1,46 @@
+.HeaderLogged {
+  width: 100%;
+  height: 67px;
+  background-color: #e9ecef;
+  margin-right: 0%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 85px;
+  border-radius: 0px 0px 10px 10px;
+  align-content: space-between;
+}
+
+.img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 20px;
+}
+
+.header__ {
+  display: flex;
+  align-items: center;
+}
+
+.header__btn {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.header__logo {
+  height: 52px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.header__title {
+  justify-self: center;
+  font-family: "Nunito", sans-serif;
+  line-height: 22px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
