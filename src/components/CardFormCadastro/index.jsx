@@ -9,8 +9,8 @@ export default function CardFormCadastro({children}){
             <input className='input__cadastro' type="phone" placeholder='Telefone'/>
             <input className='input__cadastro' type="email" placeholder='E-Mail'/>
             <input className='input__cadastro' type="password" placeholder='Senha'/>
-            <button className='btn__cadastro'>Cadastrar</button>
-            <p className='text__tenho-conta'>Já tenho conta</p>
+            <button className='btn__cadastro'><a ClassName='button__link' target="_blank" href='/Login'>Cadastrar</a></button>
+            <a className='text__tenho-conta' href="/Login">Já tenho conta</a>
             {children}
         </div>
     )
