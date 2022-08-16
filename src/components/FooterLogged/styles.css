@@ -1,29 +1,13 @@
 .FooterL {
   width: 100%;
-  /* background-color: #70E000; */
   display: flex;
-
-  /* background-image: url('../../assets/images/footerGreen.svg'); */
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  align-content: space-between;
-  /* filter: blur(4px); */
-  margin-bottom: -20px;
-  flex-shrink: 0;
+  background-color: #70E000;
 
-  width: 100%;
-  background-image: url("../../assets/images/footerGreen.png");
-  flex-shrink: 0;
-  z-index: -1;
-  display: flex;
-  align-content: space-between;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  padding: 0px 30px;
 }
 
 .btnFooter {
   cursor: pointer;
-  align-content: space-between;
 }
