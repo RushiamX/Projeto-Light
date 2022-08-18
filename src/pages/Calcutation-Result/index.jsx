@@ -8,14 +8,17 @@ import Waves from '../../components/Waves';
 export default function Results() {
     return(
         <Container>
-                <Header/>
-                <Waves className="group__waves"/>
+            <Header/>
 
-                <main>
-                    <CardFormResult/>
-                </main>
+            <div className="group__waves">
+                <Waves/>
+            </div>
+
+            <main>
+                <CardFormResult/>
+            </main>
             
-                <FooterLogged/>
+            <FooterLogged/>
         </Container>
     );
 };
