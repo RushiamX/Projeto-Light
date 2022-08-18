@@ -11,7 +11,7 @@ import Calculation from "./pages/Form-Calculation";
 import SignUp from "./pages/SingUp";
 import History from "./pages/History";
 import Result from "./pages/Calcutation-Result";
-
+import Help from "./pages/Help";
 
 export default function MyRoutes() {
   return (
@@ -22,7 +22,8 @@ export default function MyRoutes() {
         <Route path='/Login' element={<Login />} />
         <Route path='/Calculation' element={<Calculation />} />
         <Route path='/Result' element={<Result />} />
+        <Route path='/Help' element={<Help/>} />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
