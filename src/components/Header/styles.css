@@ -4,7 +4,7 @@
       height: 67px;
       background-color: rgb(213, 211, 211);
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       font-family: 'Courier New', Courier, monospace;
       font-size: 16px;
