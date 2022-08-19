@@ -1,15 +1,15 @@
 import './styles.css';
 import Container from '../../components/Container';
-import Header from '../../components/Header';
 import Waves from '../../components/Waves';
 import Footer from '../../components/Footer';
-// import FooterLogged from '../../components/FooterLogged';
+import HeaderLogged from '../../components/HeaderLogged';
+import FooterLogged from '../../components/FooterLogged';
 
 
 export default function Help() {
     return (
         <Container>
-            <Header/>
+            <HeaderLogged/>
             <div classeName="group__waves">
                 <Waves/>
             </div>
@@ -33,7 +33,7 @@ export default function Help() {
                 </div>    
             </main>
 
-            <Footer/>
+            <FooterLogged/>
             {/* <FooterLogged/> */}
         </Container>
     );
