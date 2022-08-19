@@ -7,6 +7,7 @@ import teamLight from '../../assets/images/teamLight.png'
 export default function Footer() {
   return (
     <div className='Footer'>
+      
       <img className='footer__greenLeaf' src={greenLeaf} alt="folha verde" />
       <div className="footer__title-group">
         <img className='footer__logo' src={dhLogo} alt="logo dh" />
