@@ -2,6 +2,7 @@
     position: absolute;
 
     }
+    
     main{
         width: 100vw;
         height: 100vh;
@@ -10,8 +11,3 @@
         justify-content: center;
         align-items: center;
     }
-@media only screen and (min-width: 500px) {
-    main{
-        display: none;
-    }
-}
