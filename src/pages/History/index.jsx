@@ -19,6 +19,5 @@ export default function History() {
             <FooterLogged />
            
         </Container>
-
-    )
-}
+    );
+};

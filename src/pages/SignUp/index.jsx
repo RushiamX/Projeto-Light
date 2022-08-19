@@ -7,17 +7,15 @@ import Waves from '../../components/Waves';
 
 export default function SignUp() {
     return(
-    <Container>
+        <Container>
             <Header/>
             <div className="group__waves">
-            <Waves/>
-
+                <Waves/>
             </div>
             <main>
                 <CardFormCadastro/>
             </main>
             <Footer/>
-    </Container>
-
-        )
-}
+        </Container>
+    );
+};

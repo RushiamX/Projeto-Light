@@ -1,0 +1,30 @@
+
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 80px;
+    left: -100%;
+    transition: 0.5s all;
+  }
+  
+  .nav-links.active {
+    background: rgb(1, 253, 13);
+    left: 0;
+  }
+  
+  .nav-item {
+    padding: 10px 0;
+    border-top: 1px solid rgb(20, 206, 3);
+    border-bottom: 1px solid rgb(20, 206, 3);
+  }
+  
+  .left {
+    text-align: left;
+  }
+  .nav-icon {
+    display: flex;
+  }
