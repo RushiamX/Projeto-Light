@@ -17,6 +17,7 @@ export default function MyRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<Login />} />
         <Route path='/SingUp' element={<SignUp />} />
         <Route path='/History' element={<History />} />
         <Route path='/Login' element={<Login />} />

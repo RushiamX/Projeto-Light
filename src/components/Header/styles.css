@@ -1,53 +1,4 @@
-@media only screen and (min-width: 500px) {
-  .navbar {
-    height: 80px;
-    width: 100%;
-    background: rgb(20, 206, 3);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    font-size: 1.2rem;
-  }
-  
-  .nav-logo {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .nav-links {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 20px;
-    list-style: none;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s all;
-  }
-  
-  .nav-link:hover {
-    color: red;
-  }
-  
-  .nav-icon {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  .Header{
-    display: none;
-    }
-  }
 
-  
-  @media only screen and (max-width: 500px) {
-    .navbar {
-      display: none;
-    }
     .Header{
       padding: 0px 15px;
       width: 100%;
@@ -101,6 +52,4 @@
     .nav-icon {
       display: flex;
     }
-    
-  }
   

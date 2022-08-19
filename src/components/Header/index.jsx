@@ -10,7 +10,8 @@ import iconExit from '../../assets/images/icon-exit.png'
 export default function Header() {
   return (
 		<div>
-		<nav className="navbar">
+
+{/* <nav className="navbar">
  			<img className="nav-logo" src={sun} alt="sun" />
 			 <span className='left'>TEAM LIGHT</span>
 			<div className="nav-icon">
@@ -29,11 +30,14 @@ export default function Header() {
 					</Link>
 				</li>
 			</ul>
-		</nav>
+		</nav> */}
+
 		<div className='Header'>
     	<img className="header__icon-left" src={iconLeft} alt="" />
-		<img className="header__logo" src={headerLogo} alt="" />
-		<h2 className='header__title'>Team Light</h2>
+			<div className="group__header-logo">
+			<img className="header__logo" src={headerLogo} alt="" />
+			<h2 className='header__title'>Team Light</h2>
+			</div>
 		<img className="header__icon-exit" src={iconExit} alt="" />
 
     </div>
