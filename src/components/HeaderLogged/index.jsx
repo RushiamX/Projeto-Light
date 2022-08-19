@@ -9,14 +9,14 @@ export default function HeaderLogged() {
   return (
     <div className='HeaderLogged'>
       <a href="#" className="header__btn">
-        <img  src={btnLeft} alt="" className='img'/>
+        <img  src={btnLeft} alt="" className='img__left'/>
       </a>
       <div className='header__'>
-      <img className="header__logo" src={headerLogo} alt="" />
-      <p className='header__title'>Team Light</p>
+        <img className="header__logo" src={headerLogo} alt="" />
+        <p className='header__title'>Team Light</p>
       </div>
       <a href="#" className="header__btn">
-        <img src={btnLogout} alt="" className='img'/>
+        <img src={btnLogout} alt="" className='img__logout'/>
       </a>
 
     </div>
