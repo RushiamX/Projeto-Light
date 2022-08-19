@@ -1,21 +1,21 @@
 import './styles.css'
-import Header from '../../components/Header';
 import Container from '../../components/Container';
-import Footer from '../../components/Footer';
 import CardFormCalculation from '../../components/CardFormCalculation';
 import Waves from '../../components/Waves';
+import HeaderLogged from '../../components/HeaderLogged';
+import FooterLogged from '../../components/FooterLogged';
 
 export default function Login() {
     return(
         <Container>
-            <Header/>
+            <HeaderLogged/>
             <div className="group__waves">
                 <Waves/>
             </div>
             <main>
                 <CardFormCalculation/>
             </main>
-            <Footer/>
+            <FooterLogged/>
         </Container>
 
     );

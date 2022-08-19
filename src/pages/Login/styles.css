@@ -1,17 +1,12 @@
 .group__waves{
     position: absolute;
-
     }
-    main{
+
+main{
         width: 100vw;
-        height: 100vh;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
-@media only screen and (min-width: 500px) {
-    main{
-        display: none;
-    }
-}
+
