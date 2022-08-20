@@ -33,13 +33,14 @@ let cidades = cidadesJson;
         inclinacao: ''
     });
 
+    const [city, setCity] = React.useState([]);
+
     const removeAccents = (value) => {
         return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
         
      }
 
     React.useEffect(() => {
-
         if(form.cidade.length >2){
 
             cidadeSelecionada = [];
@@ -50,7 +51,8 @@ let cidades = cidadesJson;
             })
 
             if(cidadeSelecionada.length < 20){
-                console.log(cidadeSelecionada)
+                setCity(cidadeSelecionada);
+                console.log(cidadeSelecionada);
              }
 
         }else{
@@ -84,14 +86,12 @@ let cidades = cidadesJson;
             <img className='input__image' src={iconSearch} alt="" />
             </div>
 
-            <div className="modal__cidades">
-
-                {
-                    cidadeSelecionada.map(element => {
-                        <p></p>
-                    })
-                }
-            </div>
+            {/* <div className="modal__cidades">
+                {city.map(element => {
+                        <p>{element.NAME}</p>
+                        {console.log(element.NAME);}
+                    })}
+            </div> */}
 
             <div className="input__group">
             <select className='input__calculation' 
