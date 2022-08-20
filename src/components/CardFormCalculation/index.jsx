@@ -12,6 +12,7 @@ import iconSearch from '../../assets/images/icon-search.png'
 import iconTemperatura from '../../assets/images/icon-temperatura.png'
 
 import cidadesJson from '../../irradiacaoMunicipal.json'
+import { Link } from 'react-router-dom';
 
 
 export default function CardFormCalculation({ children }) {
@@ -20,12 +21,8 @@ let cidadeSelecionada = [];
 let cidades = cidadesJson;
 
     const tipoLigacoes = ["Monofásico", "Bifásico", "Trifásico"];
-    const orientacoes = ["Norte", "Sul", "Leste", "Oeste"];
-    const inclinacoes= [30,32,34,36,38,40,42,45];
-
-
-    // console.log(cidadesJson[3]);
-
+    const orientacoes = ["Norte","Nordeste","Noroeste","Leste","Sul","Sudeste","Sudoeste","Oeste"];
+    const inclinacoes= [5,10,15,20,25,30];
 
     const [form, setForm] = React.useState({
         cidade: '',
@@ -52,14 +49,13 @@ let cidades = cidadesJson;
                 }
             })
 
-            if(cidadeSelecionada.length < 10){
+            if(cidadeSelecionada.length < 20){
                 console.log(cidadeSelecionada)
              }
 
         }else{
             cidadeSelecionada = []; 
         }
-       console.log(form.cidade)
     }, [form.cidade]);
 
 
@@ -78,7 +74,7 @@ let cidades = cidadesJson;
             </div>  
 
             <div className="input__group">
-            <input 
+            <input
             className='input__calculation' 
             type="text" 
             placeholder='DIGITE A CIDADE'
@@ -86,6 +82,15 @@ let cidades = cidadesJson;
             value={form.cidade}
             onChange={handleChange}/>
             <img className='input__image' src={iconSearch} alt="" />
+            </div>
+
+            <div className="modal__cidades">
+
+                {
+                    cidadeSelecionada.map(element => {
+                        <p></p>
+                    })
+                }
             </div>
 
             <div className="input__group">
@@ -153,7 +158,7 @@ let cidades = cidadesJson;
             </div>
             
             <button className='btn__calculation'>
-                <a className='button__link-calculation' target="_blank" href='/Calculation'>CALCULAR </a>
+                <a className='button__link-calculation' target="_blank" href=''>CALCULAR </a>
                 <img className='input__image' src={iconCalc} alt="" />
                 </button>
             {children}
