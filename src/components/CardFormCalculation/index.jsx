@@ -11,6 +11,10 @@ import iconTemperatura from '../../assets/images/icon-temperatura.png'
 export default function CardFormCalculation({ children }) {
 
 
+    const tipoLigacoes = ["Monofásico", "Bifásico", "Trifásico"];
+    const orientacoes = ["Norte", "Sul", "Leste", "Oeste"];
+    const inclinacoes= [30,32,34,36,38,40,42,45];
+
 
 
     return(
@@ -25,27 +29,42 @@ export default function CardFormCalculation({ children }) {
             </div>
 
             <div className="input__group">
-            <input className='input__calculation' type="text" placeholder='LIGAÇÃO'/>
-            <img className='input__image' src={iconLamp} alt="" />
-            </div>
-
-            <div className="input__group">
-            <input className='input__calculation' type="text" placeholder='CONSUMO MENSAL kW/h'/>
+            <select className='input__calculation' type="text">
+            <option value=''>TIPO DE LIGAÇÃO...</option>
+                    {tipoLigacoes.map(ligacao => (
+                        <option key={ligacao} value={ligacao}>{ligacao}</option>
+                        ))}
+            </select>
             <img className='input__image' src={iconLight} alt="" />
             </div>
 
             <div className="input__group">
-            <input className='input__calculation' type="text" placeholder='TEMPERATURA MÁXIMA DA CIDADE'/>
+            <input className='input__calculation' type="NUMBER" placeholder='CONSUMO MENSAL kW/h'/>
+            <img className='input__image' src={iconLamp} alt="" />
+            </div>
+
+            <div className="input__group">
+            <input className='input__calculation' type="text" placeholder='TEMPERATURA MÁXIMA'/>
             <img className='input__image' src={iconTemperatura} alt="" />
             </div>
 
             <div className="input__group">
-            <input className='input__calculation' type="text" placeholder='ORIENTAÇÃO DO TELHADO'/>
+            <select className='input__calculation' type="text">
+            <option value=''>ORIENTACÃO...</option>
+                    {orientacoes.map(orientacao => (
+                        <option key={orientacao} value={orientacao}>{orientacao}</option>
+                        ))}
+            </select>
             <img className='input__image' src={iconConpass} alt="" />
             </div>
 
             <div className="input__group">
-            <input className='input__calculation' type="text" placeholder='INCLINAÇÃO DO TELHADO'/>
+            <select className='input__calculation' type="text">
+            <option value=''>INCLINAÇÃO DO TELHADO...</option>
+                    {inclinacoes.map(inc => (
+                        <option key={inc} value={inc}>{inc}</option>
+                        ))}
+            </select>
             <img className='input__image' src={iconInclination} alt="" />
             </div>
             
