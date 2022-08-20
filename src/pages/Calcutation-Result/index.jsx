@@ -14,9 +14,9 @@ export default function Results() {
                 <Waves/>
             </div>
 
-            <main>
+            <div className='main__calculation-result'>
                 <CardFormResult/>
-            </main>
+            </div>
             
             <FooterLogged/>
         </Container>
