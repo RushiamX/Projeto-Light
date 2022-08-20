@@ -12,9 +12,9 @@ export default function Login() {
             <div className="group__waves">
                 <Waves/>
             </div>
-            <main>
+            <div className='main__login'>
                 <CardFormLogin/>
-            </main>
+            </div>
             <Footer/>
         </Container>
 
