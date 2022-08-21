@@ -1,8 +1,9 @@
 import './styles.css'
 import { useNavigate, Link } from 'react-router-dom';
 import * as React from 'react';
+
 export default function CardFormCadastro() {
-    const navigate = useNavigate();
+const navigate = useNavigate();
 
     const [form, setForm] = React.useState({
         name: '',

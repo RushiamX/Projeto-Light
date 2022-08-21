@@ -5,9 +5,9 @@ export default function ModalCidades(props){
     const handleCity = (cityChosen,cidade) => {
         props.setForm({
             ...props.form,
-            cidade: cityChosen
+            cidade: cityChosen,
+            cidadeObj: cidade
         });
-        props.setCidadeEscolhida(cidade)
     }
 
     return(
