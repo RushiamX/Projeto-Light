@@ -54,7 +54,7 @@ export default function CardLogin() {
                 <button className='btn__login'>Entrar</button>
                 {warning.show && <span className='warning'>{warning.message}</span>}
                 <Link className='text__nao-tenho-conta' to='/SignUp'>
-                    <span>Não tem conta? Cadastre-se Aqui</span>
+                    <p>Não tem conta? <br></br> <span className='text_cadastre-se'>Cadastre-se aqui</span> </p>
                 </Link>     
             </div>
         </form>
