@@ -200,7 +200,7 @@ const navigate = useNavigate();
             <img className='input__image' src={iconInclination} alt="" />
             </div>
 
-            {warning.show && <span className='warning'>{warning.message}</span>}
+            {warning.show && <span className='warning-calculo'>{warning.message}</span>}
             
             <button className='btn__calculation'>
                 <a className='button__link-calculation'>CALCULAR </a>
