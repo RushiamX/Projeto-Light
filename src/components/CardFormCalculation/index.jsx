@@ -1,7 +1,6 @@
 import './style.css'
 
 import React,{useState,useEffect} from 'react';
-import axios from 'axios';
 
 import iconCalc from '../../assets/images/icon-calc.png'
 import iconConpass from '../../assets/images/icon-conpass.png'
@@ -13,6 +12,7 @@ import iconTemperatura from '../../assets/images/icon-temperatura.png'
 
 import cidadesJson from '../../irradiacaoMunicipal.json'
 import { Link } from 'react-router-dom';
+import ModalCidades from './ModalCidades';
 
 
 export default function CardFormCalculation({ children }) {
@@ -34,6 +34,9 @@ let cidades = cidadesJson;
     });
 
     const [city, setCity] = React.useState([]);
+    const [showModal, setShowModal] = React.useState(false);
+
+
 
     const removeAccents = (value) => {
         return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -50,24 +53,26 @@ let cidades = cidadesJson;
                 }
             })
 
-            if(cidadeSelecionada.length < 20){
+            if(cidadeSelecionada.length < 10){
                 setCity(cidadeSelecionada);
                 console.log(cidadeSelecionada);
+                setShowModal(true);
              }
 
         }else{
             cidadeSelecionada = []; 
+            setShowModal(false);
         }
     }, [form.cidade]);
 
 
     const handleChange = (event) => {
+        event.preventDefault();
         setForm({
             ...form,
             [event.target.name]: event.target.value
         });
     }
-
 
     return(
         <div className="card__Form-Calculation">
@@ -86,12 +91,12 @@ let cidades = cidadesJson;
             <img className='input__image' src={iconSearch} alt="" />
             </div>
 
-            {/* <div className="modal__cidades">
-                {city.map(element => {
-                        <p>{element.NAME}</p>
-                        {console.log(element.NAME);}
-                    })}
-            </div> */}
+            <div className="modal__cidades">
+            {showModal && <ModalCidades cidades={city} 
+            setShowModal={setShowModal} 
+            form={form} 
+            setForm={setForm} />}
+            </div>
 
             <div className="input__group">
             <select className='input__calculation' 
