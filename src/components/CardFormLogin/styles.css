@@ -84,3 +84,14 @@ a {
   font-weight: bolder;
   font-size: 14px;
 }
+
+@media only screen and (max-height: 568px) {
+  .card__Login {
+    width: 261px;
+    height: 275px;
+    margin-top: 155px;
+  }
+  .text__nao-tenho-conta {
+    bottom: 10px;
+  }
+}
