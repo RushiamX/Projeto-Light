@@ -12,9 +12,9 @@ export default function History() {
             <div className="group__waves">
                 <Waves />
             </div>
-            <main className="main">
+            <div className="main__history">
                 <CardFromHistory />
-            </main>
+            </div>
       
             <FooterLogged />
            

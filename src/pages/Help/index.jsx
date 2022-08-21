@@ -14,7 +14,7 @@ export default function Help() {
                 <Waves/>
             </div>
             
-            <main>
+            <div className='main__help'>
                 <div className='help__descrition'>
                     <p>
                         Lorem ipsum dolor, sit amet consectetur
@@ -31,7 +31,7 @@ export default function Help() {
                         Quer saber mais sobre os benefícios de usar esste tipo de energia clicando AQUI.
                     </p>
                 </div>    
-            </main>
+            </div>
 
             <FooterLogged/>
             {/* <FooterLogged/> */}

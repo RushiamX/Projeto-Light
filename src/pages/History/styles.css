@@ -4,7 +4,7 @@
   display: flex;
 }
 
-.main {
+.main__history {
   width: 100%;
   display: flex;
   justify-content: center;
