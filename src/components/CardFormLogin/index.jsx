@@ -48,8 +48,8 @@ export default function CardLogin() {
         <form onSubmit={handleSubmit} className='form__login'>
             <div className="card__Login">
                 <h2 className='form__title'>Login</h2>
-                <input className='input__login' type="email" name='email' placeholder='E-Mail' value={form.email} onChange={handleChange} />
-                <input className='input__login' type="password" name='password' placeholder='Senha' value={form.password}
+                <input className='input__login' type="email" name='email' placeholder='E-MAIL' value={form.email} onChange={handleChange} />
+                <input className='input__login' type="password" name='password' placeholder='SENHA' value={form.password}
                     onChange={handleChange} />
                 <button className='btn__login'>Entrar</button>
                 {warning.show && <span className='warning'>{warning.message}</span>}
