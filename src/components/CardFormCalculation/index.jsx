@@ -1,7 +1,6 @@
 import './style.css'
 
 import React,{useState,useEffect} from 'react';
-import axios from 'axios';
 
 import iconCalc from '../../assets/images/icon-calc.png'
 import iconConpass from '../../assets/images/icon-conpass.png'
@@ -12,13 +11,17 @@ import iconSearch from '../../assets/images/icon-search.png'
 import iconTemperatura from '../../assets/images/icon-temperatura.png'
 
 import cidadesJson from '../../irradiacaoMunicipal.json'
-import { Link } from 'react-router-dom';
+import ModalCidades from './ModalCidades';
+
+import { useNavigate, Link } from 'react-router-dom';
 
 
 export default function CardFormCalculation({ children }) {
 
 let cidadeSelecionada = [];
 let cidades = cidadesJson;
+
+const navigate = useNavigate();
 
     const tipoLigacoes = ["Monofásico", "Bifásico", "Trifásico"];
     const orientacoes = ["Norte","Nordeste","Noroeste","Leste","Sul","Sudeste","Sudoeste","Oeste"];
@@ -30,10 +33,19 @@ let cidades = cidadesJson;
         consumo: '',
         temperatura: '',
         orientacao: '',
-        inclinacao: ''
+        inclinacao: '',
+        cidadeObj: {}
     });
 
     const [city, setCity] = React.useState([]);
+    const [showModal, setShowModal] = React.useState(false);
+
+    const [warning, setWarning] = React.useState({
+        show: false,
+        message: ''
+    });
+
+
 
     const removeAccents = (value) => {
         return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -50,18 +62,20 @@ let cidades = cidadesJson;
                 }
             })
 
-            if(cidadeSelecionada.length < 20){
+            if(cidadeSelecionada.length < 10){
                 setCity(cidadeSelecionada);
-                console.log(cidadeSelecionada);
+                setShowModal(true);
              }
 
         }else{
             cidadeSelecionada = []; 
+            setShowModal(false);
         }
     }, [form.cidade]);
 
 
     const handleChange = (event) => {
+        event.preventDefault();
         setForm({
             ...form,
             [event.target.name]: event.target.value
@@ -69,8 +83,37 @@ let cidades = cidadesJson;
     }
 
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        if (form.cidade === '' || form.cidadeObj === {} || 
+        form.consumo === '' || form.inclinacao === '' ||
+        form.ligacao === '' || form.orientacao === ''||
+        form.temperatura === '') {
+            setWarning({
+                show: true,
+                message: 'Preencha todos os campos'
+            });
+            setTimeout(() => {
+                setWarning({
+                    show: false,
+                    message: ''
+                });
+            }, 3000);
+            return;
+        }else{
+            localStorage.setItem('calculoAtual', JSON.stringify(form))
+            navigate('/Result');
+
+        }
+
+    }
+
     return(
-        <div className="card__Form-Calculation">
+        
+        <form onSubmit={handleSubmit} >
+            <div className="card__Form-Calculation">  
+
             <div className="div-title">
                 <h4 className="title-card">Cálculo</h4>
             </div>  
@@ -86,12 +129,12 @@ let cidades = cidadesJson;
             <img className='input__image' src={iconSearch} alt="" />
             </div>
 
-            {/* <div className="modal__cidades">
-                {city.map(element => {
-                        <p>{element.NAME}</p>
-                        {console.log(element.NAME);}
-                    })}
-            </div> */}
+            <div className="modal__cidades">
+            {showModal && <ModalCidades cidades={city} 
+            form={form} 
+            setForm={setForm} 
+            />}
+            </div>
 
             <div className="input__group">
             <select className='input__calculation' 
@@ -120,7 +163,7 @@ let cidades = cidadesJson;
 
             <div className="input__group">
             <input className='input__calculation' 
-            type="text" 
+            type="number" 
             placeholder='TEMPERATURA MÁXIMA'
             name='temperatura'
             value={form.temperatura}
@@ -156,13 +199,18 @@ let cidades = cidadesJson;
             </select>
             <img className='input__image' src={iconInclination} alt="" />
             </div>
+
+            {warning.show && <span className='warning'>{warning.message}</span>}
             
             <button className='btn__calculation'>
-                <a className='button__link-calculation' target="_blank" href=''>CALCULAR </a>
+                <a className='button__link-calculation'>CALCULAR </a>
                 <img className='input__image' src={iconCalc} alt="" />
                 </button>
+
+
             {children}
-        </div>
+            </div>
+        </form>
     )
 
 }

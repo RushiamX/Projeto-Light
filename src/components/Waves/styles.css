@@ -3,6 +3,7 @@
   height: 180px;
   display: flex;
   position: absolute;
+  z-index: -1;
 }
 
 .teste_waves{
