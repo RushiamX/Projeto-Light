@@ -34,6 +34,7 @@ let cidades = cidadesJson;
     });
 
     const [city, setCity] = React.useState([]);
+    const [cidadeEscolhida, setCidadeEscolhida] = React.useState([]);
     const [showModal, setShowModal] = React.useState(false);
 
 
@@ -55,7 +56,6 @@ let cidades = cidadesJson;
 
             if(cidadeSelecionada.length < 10){
                 setCity(cidadeSelecionada);
-                console.log(cidadeSelecionada);
                 setShowModal(true);
              }
 
@@ -72,10 +72,21 @@ let cidades = cidadesJson;
             ...form,
             [event.target.name]: event.target.value
         });
+        console.log(cidadeEscolhida);
     }
 
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+    }
+
+
     return(
-        <div className="card__Form-Calculation">
+        
+        <form onSubmit={handleSubmit} >
+            <div className="card__Form-Calculation">  
+
             <div className="div-title">
                 <h4 className="title-card">Cálculo</h4>
             </div>  
@@ -93,9 +104,9 @@ let cidades = cidadesJson;
 
             <div className="modal__cidades">
             {showModal && <ModalCidades cidades={city} 
-            setShowModal={setShowModal} 
             form={form} 
-            setForm={setForm} />}
+            setForm={setForm} 
+            setCidadeEscolhida={setCidadeEscolhida}/>}
             </div>
 
             <div className="input__group">
@@ -167,7 +178,8 @@ let cidades = cidadesJson;
                 <img className='input__image' src={iconCalc} alt="" />
                 </button>
             {children}
-        </div>
+            </div>
+        </form>
     )
 
 }
