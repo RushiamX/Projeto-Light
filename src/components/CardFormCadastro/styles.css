@@ -16,6 +16,7 @@
   z-index: 3;
 }
 
+
 @media only screen and (max-height: 750px) {
   .card__Form-Cadastro {
     height: 348px;
@@ -88,3 +89,4 @@ a {
     bottom: 8px;
   }
 }
+
