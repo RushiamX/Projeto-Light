@@ -102,7 +102,7 @@ export default function CardFormCadastro() {
                 {warning.show && <span className='warning'>{warning.message}</span>}
 
                 <button className='btn__cadastro'>Cadastrar</button>
-                <Link className='text__tenho-conta' to='/Calculation'>
+                <Link className='text__tenho-conta' to='/Login'>
                     <span>Já tenho conta</span>
                 </Link>
             </div>
