@@ -6,13 +6,13 @@ import CardFormCadastro from '../../components/CardFormCadastro';
 import Waves from '../../components/Waves';
 
 export default function SignUp() {
-    return(
+    return (
         <Container>
             <Header/>
             <div className="group__waves">
                 <Waves/>
             </div>
-            <div className='main__signup'>
+            <div className='main__singup'>
                 <CardFormCadastro/>
             </div>
             <Footer/>
