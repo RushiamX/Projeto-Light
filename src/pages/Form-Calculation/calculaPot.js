@@ -1,7 +1,10 @@
 
 function calculaPotencia(consumoMensal, ligacao, irradiacao, temperatura){
-  let perdas = 0.24;
-  let rendimento = 1 - perdas;
+  let perdasPadrao = 0.073;
+  
+  let perdaTermica = (temperatura+5)*0.0039
+  let perdaTotal = perdasPadrao + perdaTermica + perdaPosicao
+  let rendimento = 1 - perdaTotal;
 
   switch(ligacao){
     case 'monofásica':
