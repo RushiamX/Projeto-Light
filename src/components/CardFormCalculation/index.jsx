@@ -65,6 +65,7 @@ export default function CardFormCalculation({ children }) {
             if (cidadeSelecionada.length < 10) {
                 setCity(cidadeSelecionada);
                 setShowModal(true);
+                console.log(cidadeSelecionada)
             }
 
         } else {
@@ -129,11 +130,12 @@ export default function CardFormCalculation({ children }) {
                     <img className='input__image' src={iconSearch} alt="" />
                 </div>
 
-                <div className="modal__cidades">
-                    {showModal && <ModalCidades cidades={city}
+                <div className='modal__city'>
+                   {showModal && <ModalCidades cidades={city}
                         form={form}
                         setForm={setForm}
                     />}
+
                 </div>
 
                 <div className="input__group">
