@@ -30,3 +30,27 @@ para o CLIENTE.
 
 Link com o WireFrame:
 https://www.figma.com/file/M3JoSre1h2f37zNpcZWVP8/Projeto-Solar?node-id=0%3A1
+
+
+
+
+// Coisas que eu vi no projeto que precisam de melhoramento
+
+** na tela de login 
+    ** não está aparecendo os ícones nos cabeçario (isso pode ser erro no CSS)
+    ** o card do login no main está desconfigurado em relação ao scrol (isso pode ser erro no CSS)
+    ** ver a questão dos links e suas rotas
+        ** principalmente a rota do botão de entrar
+
+    *! o footer dessa tela está perfeito - copiar para as outras telas
+
+** na tela de singin
+    ** não está aparecendo os ícones nos cabeçario (isso pode ser erro no CSS)
+    ** o card do login no main está desconfigurado em relação ao scrol (isso pode ser erro no CSS)
+    ** a configuração do tamanho do formulário está cortando as palavras 
+    ** ver a questão dos links e suas rotas
+        ** principalmente a rota do botão de cadastro
+
+** na tela de escrita dos dados para o cálculo 
+
+
