@@ -8,10 +8,8 @@
     font-size: 20px;
     line-height: 30px;
 
-    position: absolute;
-    top: 165px;
     background-color: white;
-    z-index: 8;
+    z-index: 20;
   
   }
 

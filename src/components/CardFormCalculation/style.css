@@ -1,5 +1,4 @@
-
-.card__Form-Calculation{
+.card__Form-Calculation {
   width: 320px;
   height: 500px;
 
@@ -7,16 +6,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
- 
-  background: #E9ECEF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;;
 
-  margin-top: 130px;
-  
+  background: #e9ecef;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 10px;
+  margin-top: 170px;
+
   z-index: 3;
-
 }
+
 .div-title {
   border-radius: 10px 10px 0 0;
   background-color: #5fbcfa;
@@ -25,6 +23,7 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  font-family: "Nunito";
 }
 
 .title-card {
@@ -34,72 +33,154 @@
   line-height: 22px;
   font-size: 16px;
 }
-.form__title{
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 200;
-font-size: 22px;
-line-height: 30px;
 
-color: #050000;
+.form__title {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 30px;
 
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 10px rgba(0, 0, 0, 0.25);
+  color: #050000;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-.input__calculation{
-  all:unset;
-  border-bottom: 1px solid black;
-  font-family: 'Nunito';
+.input__calculation {
+  all: unset;
+  /* border-bottom: 1px solid black; */
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  width: 250px;
+  background-color: #e9ecef;
+  line-height: 16px;
+}
+
+.input__calculation-select {
+  all: unset;
+  /* border-bottom: 1px solid black; */
+  font-family: "Nunito";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   width: 250px;
+  border: 0;
+  background-color: #e9ecef;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-.btn__calculation{
-border: none;
-width: 121px;
-height: 36px;
-
-background: #eeff00;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-font-size: 14px;
-line-height: 21px;
-text-align: center;
-color: #000000;
-
-margin-bottom: 27px;
-
-display: flex;
-justify-content: center;
-align-items: center;
+.input__calculation::-webkit-input-placeholder {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: black;
 }
 
-.button__link-calculation{
-  text-decoration: none;
+.option-select:invalid {
+  color: red;
+  background-color: #e9ecef;
+  font-size: 12px;
+  font-family: "Nunito";
+}
+
+.btn__calculation {
+  border: none;
+  width: 154px;
+  height: 37px;
+
+  background-color: #eeff00;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+  font-family: "Nunito";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: center;
   color: #000000;
-}
 
-.input__image{
-  width: 27px;
-  height: 32px;
-}
+  margin-bottom: 27px;
+  gap: 8px;
 
-.input__group{
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.btn__calculation .input__image{
+.button__link-calculation {
+  text-decoration: none;
+  color: #000000;
+}
+
+.input__image {
+  width: 16px;
+  height: 26x;
+}
+
+.input__group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.btn__calculation .input__image {
   width: 15px;
   height: 20px;
   margin-left: 8px;
 }
 
-.warning-calculo{
+.warning-calculo {
   position: absolute;
-  top: 675px
+  top: 675px;
+}
+
+.modal__city{
+  position: absolute;
+  top:365px;
+}
+
+
+@media screen and (max-height: 768px) {
+  .card__Form-Calculation {
+    width: 270px;
+    height: 370px;
+    margin-top: 155px;
+  }
+
+  .input__calculation {
+    font-size: 12px;
+    width: 210px;
+    line-height: 16px;
+  }
+
+  .input__group {
+    margin-top: 5px;
+  }
+
+  .input__calculation::-webkit-input-placeholder {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: black;
+  }
+
+  .btn__calculation {
+    width: 134px;
+    height: 32px;
+    margin-bottom: 15px;
+
+    font-size: 12px;
+  }
 }

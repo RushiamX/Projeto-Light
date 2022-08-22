@@ -1,6 +1,6 @@
 import './style.css'
 
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import iconCalc from '../../assets/images/icon-calc.png'
 import iconConpass from '../../assets/images/icon-conpass.png'
@@ -18,14 +18,14 @@ import { useNavigate, Link } from 'react-router-dom';
 
 export default function CardFormCalculation({ children }) {
 
-let cidadeSelecionada = [];
-let cidades = cidadesJson;
+    let cidadeSelecionada = [];
+    let cidades = cidadesJson;
 
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const tipoLigacoes = ["Monofásico", "Bifásico", "Trifásico"];
-    const orientacoes = ["Norte","Nordeste","Noroeste","Leste","Sul","Sudeste","Sudoeste","Oeste"];
-    const inclinacoes= [5,10,15,20,25,30];
+    const orientacoes = ["Norte", "Nordeste", "Noroeste", "Leste", "Sul", "Sudeste", "Sudoeste", "Oeste"];
+    const inclinacoes = [5, 10, 15, 20, 25, 30];
 
     const [form, setForm] = React.useState({
         cidade: '',
@@ -49,26 +49,27 @@ const navigate = useNavigate();
 
     const removeAccents = (value) => {
         return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-        
-     }
+
+    }
 
     React.useEffect(() => {
-        if(form.cidade.length >2){
+        if (form.cidade.length > 2) {
 
             cidadeSelecionada = [];
             cidades.forEach(element => {
-                if (removeAccents(element.NAME).includes(removeAccents(form.cidade))){
+                if (removeAccents(element.NAME).includes(removeAccents(form.cidade))) {
                     cidadeSelecionada.push(element);
                 }
             })
 
-            if(cidadeSelecionada.length < 10){
+            if (cidadeSelecionada.length < 10) {
                 setCity(cidadeSelecionada);
                 setShowModal(true);
-             }
+                console.log(cidadeSelecionada)
+            }
 
-        }else{
-            cidadeSelecionada = []; 
+        } else {
+            cidadeSelecionada = [];
             setShowModal(false);
         }
     }, [form.cidade]);
@@ -86,10 +87,10 @@ const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (form.cidade === '' || form.cidadeObj === {} || 
-        form.consumo === '' || form.inclinacao === '' ||
-        form.ligacao === '' || form.orientacao === ''||
-        form.temperatura === '') {
+        if (form.cidade === '' || form.cidadeObj === {} ||
+            form.consumo === '' || form.inclinacao === '' ||
+            form.ligacao === '' || form.orientacao === '' ||
+            form.temperatura === '') {
             setWarning({
                 show: true,
                 message: 'Preencha todos os campos'
@@ -101,7 +102,7 @@ const navigate = useNavigate();
                 });
             }, 3000);
             return;
-        }else{
+        } else {
             localStorage.setItem('calculoAtual', JSON.stringify(form))
             navigate('/Result');
 
@@ -109,106 +110,107 @@ const navigate = useNavigate();
 
     }
 
-    return(
-        
+    return (
+
         <form onSubmit={handleSubmit} >
-            <div className="card__Form-Calculation">  
+            <div className="card__Form-Calculation">
 
-            <div className="div-title">
-                <h4 className="title-card">Cálculo</h4>
-            </div>  
+                <div className="div-title">
+                    <h4 className="title-card">Cálculo</h4>
+                </div>
 
-            <div className="input__group">
-            <input
-            className='input__calculation' 
-            type="text" 
-            placeholder='DIGITE A CIDADE'
-            name='cidade'
-            value={form.cidade}
-            onChange={handleChange}/>
-            <img className='input__image' src={iconSearch} alt="" />
-            </div>
+                <div className="input__group">
+                    <input
+                        className='input__calculation'
+                        type="text"
+                        placeholder='DIGITE A CIDADE'
+                        name='cidade'
+                        value={form.cidade}
+                        onChange={handleChange} />
+                    <img className='input__image' src={iconSearch} alt="" />
+                </div>
 
-            <div className="modal__cidades">
-            {showModal && <ModalCidades cidades={city} 
-            form={form} 
-            setForm={setForm} 
-            />}
-            </div>
+                <div className='modal__city'>
+                   {showModal && <ModalCidades cidades={city}
+                        form={form}
+                        setForm={setForm}
+                    />}
 
-            <div className="input__group">
-            <select className='input__calculation' 
-            type="text"
-            name='ligacao'
-            value={form.ligacao}
-            onChange={handleChange}>
-            <option value=''>TIPO DE LIGAÇÃO...</option>
-                    {tipoLigacoes.map(ligacao => (
-                        <option key={ligacao} value={ligacao}>{ligacao}</option>
+                </div>
+
+                <div className="input__group">
+                    <select className='input__calculation'
+                        type="text"
+                        name='ligacao'
+                        value={form.ligacao}
+                        onChange={handleChange}>
+                        <option value=''>TIPO DE LIGAÇÃO</option>
+                        {tipoLigacoes.map(ligacao => (
+                            <option key={ligacao} value={ligacao}>{ligacao}</option>
                         ))}
-            </select>
-            <img className='input__image' src={iconLight} alt="" />
-            </div>
+                    </select>
+                    <img className='input__image' src={iconLight} alt="" />
+                </div>
 
-            <div className="input__group">
-            <input className='input__calculation' 
-            type="NUMBER" 
-            placeholder='CONSUMO MENSAL kW/h'
-            name='consumo'
-            value={form.consumo}
-            onChange={handleChange}/>
+                <div className="input__group">
+                    <input className='input__calculation'
+                        type="NUMBER"
+                        placeholder='CONSUMO MENSAL kW/h'
+                        name='consumo'
+                        value={form.consumo}
+                        onChange={handleChange} />
 
-            <img className='input__image' src={iconLamp} alt="" />
-            </div>
+                    <img className='input__image' src={iconLamp} alt="" />
+                </div>
 
-            <div className="input__group">
-            <input className='input__calculation' 
-            type="number" 
-            placeholder='TEMPERATURA MÁXIMA'
-            name='temperatura'
-            value={form.temperatura}
-            onChange={handleChange}/>
+                <div className="input__group">
+                    <input className='input__calculation'
+                        type="number"
+                        placeholder='TEMPERATURA MÁXIMA'
+                        name='temperatura'
+                        value={form.temperatura}
+                        onChange={handleChange} />
 
-            <img className='input__image' src={iconTemperatura} alt="" />
-            </div>
+                    <img className='input__image' src={iconTemperatura} alt="" />
+                </div>
 
-            <div className="input__group">
-            <select className='input__calculation' 
-            type="text"
-            name='orientacao'
-            value={form.orientacao}
-            onChange={handleChange}>
-            <option value=''>ORIENTACÃO...</option>
-                    {orientacoes.map(orientacao => (
-                        <option key={orientacao} value={orientacao}>{orientacao}</option>
+                <div className="input__group">
+                    <select className='input__calculation'
+                        type="text"
+                        name='orientacao'
+                        value={form.orientacao}
+                        onChange={handleChange}>
+                        <option value=''>ORIENTAÇÃO</option>
+                        {orientacoes.map(orientacao => (
+                            <option key={orientacao} value={orientacao}>{orientacao}</option>
                         ))}
-            </select>
-            <img className='input__image' src={iconConpass} alt="" />
-            </div>
+                    </select>
+                    <img className='input__image' src={iconConpass} alt="" />
+                </div>
 
-            <div className="input__group">
-            <select className='input__calculation' 
-            type="text"
-            name='inclinacao'
-            value={form.inclinacao}
-            onChange={handleChange}>
-            <option value=''>INCLINAÇÃO DO TELHADO...</option>
-                    {inclinacoes.map(inc => (
-                        <option key={inc} value={inc}>{inc}</option>
+                <div className="input__group">
+                    <select className='input__calculation'
+                        type="text"
+                        name='inclinacao'
+                        value={form.inclinacao}
+                        onChange={handleChange}>
+                        <option value=''>INCLINAÇÃO DO TELHADO</option>
+                        {inclinacoes.map(inc => (
+                            <option key={inc} value={inc}>{inc}</option>
                         ))}
-            </select>
-            <img className='input__image' src={iconInclination} alt="" />
-            </div>
+                    </select>
+                    <img className='input__image' src={iconInclination} alt="" />
+                </div>
 
-            {warning.show && <span className='warning-calculo'>{warning.message}</span>}
-            
-            <button className='btn__calculation'>
-                <a className='button__link-calculation'>CALCULAR </a>
-                <img className='input__image' src={iconCalc} alt="" />
+                {warning.show && <span className='warning-calculo'>{warning.message}</span>}
+
+                <button className='btn__calculation'>
+                    <a className='button__link-calculation'>CALCULAR </a>
+                    <img className='input__image' src={iconCalc} alt="" />
                 </button>
 
 
-            {children}
+                {children}
             </div>
         </form>
     )

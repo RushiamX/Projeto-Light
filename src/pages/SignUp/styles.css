@@ -1,12 +1,12 @@
 .group__waves{
     position: absolute;
-
-    }
+}
     
-    .main__signup{
-        width: 100vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+.main__singup{
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}  
