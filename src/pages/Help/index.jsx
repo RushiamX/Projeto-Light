@@ -2,8 +2,9 @@ import './styles.css';
 import Container from '../../components/Container';
 import Header from '../../components/Header';
 import Waves from '../../components/Waves';
-import Footer from '../../components/Footer';
-// import FooterLogged from '../../components/FooterLogged';
+import FooterLogged from '../../components/FooterLogged';
+
+import logoDh from '../../assets/images/deh.png';
 
 
 export default function Help() {
@@ -30,11 +31,14 @@ export default function Help() {
                     <p>
                         Quer saber mais sobre os benefícios de usar esste tipo de energia clicando AQUI.
                     </p>
-                </div>    
+                </div>  
+                <div>
+                    <img src="" alt="" />
+                    <img cla src={logoDh} alt="logo dh" />
+                    <img src="" alt="" />
+                </div>  
             </main>
-
-            <Footer/>
-            {/* <FooterLogged/> */}
+            <FooterLogged/>
         </Container>
     );
 };
