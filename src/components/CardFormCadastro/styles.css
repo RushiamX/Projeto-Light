@@ -1,67 +1,92 @@
+.card__Form-Cadastro {
+  width: 261px;
+  height: 398px;
 
-.card__Form-Cadastro{
-    width: 261px;
-    height: 398px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-   
-    background: #E9ECEF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;;
+  background-color: #e9ecef;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 10px;
 
-    padding-top: 25px;
-    margin-top: 170px;
-    z-index: 3;
-
+  padding-top: 25px;
+  margin-top: 200px;
+  z-index: 3;
 }
 
-.form__title{
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 200;
-font-size: 22px;
-line-height: 30px;
 
-color: #050000;
-
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 10px rgba(0, 0, 0, 0.25);
+@media only screen and (max-height: 750px) {
+  .card__Form-Cadastro {
+    height: 348px;
+    margin-top: 160px;
+  }
 }
 
-.input__cadastro{
-    all:unset;
-    border-bottom: 1px solid black;
-    width: 188px;
+.form__title {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 30px;
+
+  color: #050000;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-.btn__cadastro{
-
-border: none;
-width: 121px;
-height: 36px;
-
-background: #38B000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 12px;
-
-font-size: 14px;
-line-height: 21px;
-text-align: center;
-color: #000000;
+.input__cadastro {
+  all: unset;
+  border-bottom: 1px solid black;
+  width: 188px;
+  font-size: 12px;
+  font-family: "Nunito";
+  text-transform: uppercase;
 }
 
-a{
-    text-decoration: none;
-    color: #000000;
+.btn__cadastro {
+  border: none;
+  width: 121px;
+  height: 36px;
+
+  background: #38b000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+
+  font-family: "Poppins";
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: #000000;
 }
-.text__tenho-conta{
-    font-weight: 300;
-    font-size: 13px;
-    text-align: center;
-    position: relative;
-    bottom: 20px;
-    text-decoration: none;
-    color: #3700ff;
+
+a {
+  text-decoration: none;
+  color: #000000;
 }
+
+.text__tenho-conta {
+  font-weight: 300;
+  font-size: 13px;
+  font-family: "Poppins";
+  line-height: 16px;
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+  text-decoration: none;
+  color: #0500fa;
+}
+
+@media only screen and (max-height: 568px) {
+  .card__Form-Cadastro {
+    height: 290px;
+    width: 241px;
+    margin-top: 125px;
+  }
+  .text__tenho-conta {
+    bottom: 8px;
+  }
+}
+

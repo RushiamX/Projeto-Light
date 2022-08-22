@@ -1,67 +1,94 @@
+.card__Login {
+  width: 261px;
+  height: 300px;
 
-.card__Login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #e9ecef;
+  /* box-shadow: 0 0 0 rgba(0, 0, 0, 0.25); */
+  border-radius: 10px;
+
+  padding-top: 25px;
+  margin-top: 170px;
+
+  z-index: 3;
+}
+
+.form__title {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 30px;
+
+  color: black;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.input__login {
+  all: unset;
+  border-bottom: 1px solid black;
+  width: 188px;
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.btn__login {
+  border: none;
+  width: 121px;
+  height: 36px;
+
+  background: #38b000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+
+  font-weight: 300;
+
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  font-family: "Poppins";
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.text__nao-tenho-conta {
+  font-weight: 300;
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+  text-decoration: none;
+  color: #000000;
+
+  font-family: "Poppins";
+}
+
+.text_cadastre-se {
+  color: #000000;
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+@media only screen and (max-height: 568px) {
+  .card__Login {
     width: 261px;
-    height: 300px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-   
-    background: #E9ECEF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;;
-
-    padding-top: 25px;
-    margin-top: 170px;
-
-    z-index: 3;
-
-}
-
-.form__title{
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 200;
-font-size: 22px;
-line-height: 30px;
-
-color: #050000;
-
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 10px rgba(0, 0, 0, 0.25);
-}
-
-.input__login{
-    all:unset;
-    border-bottom: 1px solid black;
-    width: 188px;
-}
-
-.btn__login{
-
-border: none;
-width: 121px;
-height: 36px;
-
-background: #38B000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 12px;
-
-font-size: 14px;
-line-height: 21px;
-text-align: center;
-}
-
-a{
-    text-decoration: none;
-    color: #000000;
-}
-.text__nao-tenho-conta{
-    font-weight: 300;
-    font-size: 13px;
-    text-align: center;
-    position: relative;
-    bottom: 20px;
-    text-decoration: none;
-    color: #3700ff;
+    height: 275px;
+    margin-top: 155px;
+  }
+  .text__nao-tenho-conta {
+    bottom: 10px;
+  }
 }
