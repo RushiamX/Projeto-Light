@@ -10,7 +10,7 @@ import iconLight from '../../assets/images/icon-light.png'
 import iconSearch from '../../assets/images/icon-search.png'
 import iconTemperatura from '../../assets/images/icon-temperatura.png'
 
-import cidadesJson from '../../irradiacaoMunicipal.json'
+import cidadesJson from '../../jsonFiles/irradiacaoMunicipal.json'
 import ModalCidades from './ModalCidades';
 
 import { useNavigate, Link } from 'react-router-dom';

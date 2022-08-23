@@ -5,12 +5,11 @@
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 25px;
 
     background-color: white;
-    z-index: 20;
-  
+    z-index: 10;
   }
 
   .item__cidade{
@@ -18,5 +17,5 @@
   }
 
   .item__cidade:hover{
-    font-size: 22px;
+    font-size: 18px;
   }

@@ -132,11 +132,6 @@
   top: 675px;
 }
 
-.modal__city{
-  position: absolute;
-  top:365px;
-}
-
 
 @media screen and (max-height: 768px) {
   .card__Form-Calculation {
