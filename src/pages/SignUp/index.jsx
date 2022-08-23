@@ -9,12 +9,11 @@ export default function SignUp() {
     return (
         <Container>
             <Header/>
-            <div className="group__waves">
-                <Waves/>
-            </div>
+            
             <div className='main__singup'>
                 <CardFormCadastro/>
             </div>
+
             <Footer/>
         </Container>
     );
