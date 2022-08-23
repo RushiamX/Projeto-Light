@@ -1,24 +1,25 @@
 .group__waves {
-    position: absolute;
     width: 100%;
     display: flex;
   }
-  
+
   .main__help {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 0 auto;
+    
+    
+    flex-direction: column;
+  }
 
-    padding: 300px 80px;
+  .help__description {
+
+  }
+
+  .help__information {
+
   }
   
-  /* .footer {
-    width: 100%;
-    background-image: url('../../assets/images/footerGreen.png');
-    flex-shrink: 0;
-    z-index: -1;
-    display: flex;
-    align-content: space-between;
-  } */
+  .help__images {
+
+  }
