@@ -10,10 +10,6 @@ export default function Results() {
         <Container>
             <HeaderLogged/>
 
-            <div className="group__waves">
-                <Waves/>
-            </div>
-
             <div className='main__calculation-result'>
                 <CardFormResult/>
             </div>
