@@ -10,9 +10,7 @@
   background-color: #e9ecef;
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   border-radius: 10px;
-
   padding-top: 25px;
-  margin-top: 200px;
   z-index: 3;
 }
 
@@ -20,7 +18,6 @@
 @media only screen and (max-height: 750px) {
   .card__Form-Cadastro {
     height: 348px;
-    margin-top: 160px;
   }
 }
 
@@ -83,7 +80,6 @@ a {
   .card__Form-Cadastro {
     height: 290px;
     width: 241px;
-    margin-top: 125px;
   }
   .text__tenho-conta {
     bottom: 8px;

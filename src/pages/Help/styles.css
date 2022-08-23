@@ -1,24 +1,17 @@
-.group__waves {
-    position: absolute;
-    width: 100%;
-    display: flex;
-  }
   
   .main__help {
     width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 0 auto;
 
-    padding: 300px 80px;
+    background-image: url(../../assets/images/waves-backgroud.png);
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-grow: 3;
+
+    padding: 0px 80px;
   }
   
-  /* .footer {
-    width: 100%;
-    background-image: url('../../assets/images/footerGreen.png');
-    flex-shrink: 0;
-    z-index: -1;
-    display: flex;
-    align-content: space-between;
-  } */
