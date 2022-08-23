@@ -6,12 +6,3 @@
   box-sizing: border-box;
   overflow-x:hidden;
 }
-/* 
-body {
-  width: 400px;
-  height: 800px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: space-between;
-} */
