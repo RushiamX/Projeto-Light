@@ -9,7 +9,7 @@ export default function SignUp() {
     return (
         <Container>
             <Header/>
-
+            
             <div className='main__singup'>
                 <CardFormCadastro/>
             </div>

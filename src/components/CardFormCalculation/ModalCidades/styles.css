@@ -1,12 +1,16 @@
 .modal__cidades{
-  width: 300px;
-  text-align: center;
+    width: 300px;
+    text-align: center;
+  
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
 
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 25px;
+    background-color: white;
+    z-index: 10;
+  }
 
   background-color: white;
   z-index: 10;
@@ -19,3 +23,4 @@
 .item__cidade:hover{
   font-size: 18px;
 }
+

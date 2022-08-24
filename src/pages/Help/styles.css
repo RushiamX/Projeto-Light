@@ -1,18 +1,19 @@
-.main__help {
-  width: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .main__help {
+    width: 100%;
 
-  background-image: url(../../assets/images/waves-backgroud.png);
-  flex-wrap: wrap;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  flex-grow: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  padding: 0px 80px;
-}
+    background-image: url(../../assets/images/waves-backgroud.png);
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-grow: 3;
+
+    padding: 0px 80px;
+  }
 
   .help__description {
 

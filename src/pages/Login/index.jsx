@@ -3,7 +3,6 @@ import Header from '../../components/Header';
 import Container from '../../components/Container';
 import Footer from '../../components/Footer';
 import CardFormLogin from '../../components/CardFormLogin';
-import Waves from '../../components/Waves';
 
 export default function Login() {
     return(
