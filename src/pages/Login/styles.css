@@ -1,12 +1,13 @@
-.group__waves{
-    position: absolute;
-    }
+.main__login{
+    width: 100%;
 
-        .main__login{
-        width: 100vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    background-image: url(../../assets/images/waves-backgroud.png);
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-grow: 3;
+}
