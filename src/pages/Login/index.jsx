@@ -9,12 +9,11 @@ export default function Login() {
     return(
         <Container>
             <Header/>
-            <div className="group__waves">
-                <Waves/>
-            </div>
+
             <div className='main__login'>
                 <CardFormLogin/>
             </div>
+            
             <Footer/>
         </Container>
 
