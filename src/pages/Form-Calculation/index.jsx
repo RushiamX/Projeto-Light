@@ -12,7 +12,7 @@ export default function Login() {
             <div  className='main__calculation'>
                 <CardFormCalculation/>
             </div>
-
+            
             <FooterLogged/>
         </Container>
 

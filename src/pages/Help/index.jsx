@@ -3,6 +3,10 @@ import Container from '../../components/Container';
 import HeaderLogged from '../../components/HeaderLogged';
 import FooterLogged from '../../components/FooterLogged';
 
+import energySaving from '../../assets/images/energySaving.png';
+import logoDh from '../../assets/images/dh.png';
+import teamLight from '../../assets/images/teamLight.png';
+
 
 export default function Help() {
     return (
@@ -10,8 +14,8 @@ export default function Help() {
             <HeaderLogged/>
             
             <div className='main__help'>
-                <div className='help__descrition'>
-                    <p>
+                <div className='help__description'>
+                    <p className='description__energy'>
                         Lorem ipsum dolor, sit amet consectetur
                         adipisicing elit. Sed, eveniet expedita
                         dolorum, amet ipsum suscipit tenetur, 
@@ -22,12 +26,17 @@ export default function Help() {
                 </div>
 
                 <div className='help__information'>
-                    <p>
-                        Quer saber mais sobre os benefícios de usar esste tipo de energia clicando AQUI.
+                    <p className='information__link'>
+                        Quer saber mais sobre os benefícios de usar esste tipo de energia clicando 
+                        <a href=''>AQUI.</a>
                     </p>
-                </div>    
+                </div> 
+                <div className='help__images'>
+                    <img className='images__energySaving' src={energySaving} alt="folha verde" />
+                    <img className='images__logoDh' src={logoDh} alt="logo Digital House" />
+                    <img className='images__teamLight' src={teamLight} alt="nome do time e da turma" />
+                </div>   
             </div>
-
             <FooterLogged/>
         </Container>
     );

@@ -12,10 +12,15 @@
     z-index: 10;
   }
 
-  .item__cidade{
-    cursor: pointer;
-  }
+  background-color: white;
+  z-index: 10;
+}
 
-  .item__cidade:hover{
-    font-size: 18px;
-  }
+.item__cidade{
+  cursor: pointer;
+}
+
+.item__cidade:hover{
+  font-size: 18px;
+}
+
