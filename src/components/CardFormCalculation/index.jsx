@@ -135,7 +135,6 @@ export default function CardFormCalculation({ children }) {
                         form={form}
                         setForm={setForm}
                     />}
-
                 </div>
 
                 <div className="input__group">
