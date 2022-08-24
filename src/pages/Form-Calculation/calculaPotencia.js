@@ -16,6 +16,8 @@ function calculaPotencia(consumoMensal, ligacao, irradiacao, temperatura){
     case 'trifásica':
       ligacao = 100;
       break;
+      default:
+      break;
   }
   
 
