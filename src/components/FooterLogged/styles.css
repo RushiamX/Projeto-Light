@@ -1,18 +1,21 @@
 .FooterL {
   width: 100%;
+  
   display: flex;
   justify-content: center;
   align-items: center;
+  
   background-color: #70E000;
+  
   padding: 0px 30px;
   position: fixed;
   bottom: 0px;
 }
 
-.btnFooter {
-  cursor: pointer;
-}
-
 .image__clock{
-  margin: 0px 60px;
+  margin: 0 40px;
+} 
+
+.image__calc {
+  margin:0 40px;
 }
