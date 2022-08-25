@@ -7,7 +7,6 @@ import {Link, useNavigate } from 'react-router-dom'
 
 
 
-
 export default function HeaderLogged() {
 
   const toback = () =>{
@@ -17,7 +16,7 @@ export default function HeaderLogged() {
   const navigate = useNavigate();
   const logout = (e) => {
     e.preventDefault();
-    sessionStorage.clear();
+    localStorage.removeItem('token');
 
     navigate('/');
   }

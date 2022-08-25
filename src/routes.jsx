@@ -21,9 +21,12 @@ export default function MyRoutes() {
         <Route path='/SignUp' element={<SignUp />} />
         <Route path='/History' element={<History />} />
         <Route path='/Login' element={<Login />} />
+
         <Route path='/Calculation' element={<Calculation />} />
         <Route path='/Result' element={<Result />} />
+
         <Route path='/Help' element={<Help/>} />
+        
       </Routes>
     </BrowserRouter>
   );
