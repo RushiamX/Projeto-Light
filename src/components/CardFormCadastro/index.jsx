@@ -68,7 +68,7 @@ export default function CardFormCadastro() {
             });
             setTimeout(() => {
                 navigate('/Login');
-            }, 10000);
+            }, 500);
         }
     }
     return (
