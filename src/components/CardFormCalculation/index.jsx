@@ -11,7 +11,6 @@ import iconSearch from '../../assets/images/icon-search.png'
 import iconTemperatura from '../../assets/images/icon-temperatura.png'
 
 import cidadesJson from '../../jsonFiles/irradiacaoMunicipal.json'
-import ModalCidades from './ModalCidades';
 
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -38,7 +37,6 @@ export default function CardFormCalculation({ children }) {
     });
 
     const [city, setCity] = React.useState([]);
-    const [showModal, setShowModal] = React.useState(false);
 
     const [warning, setWarning] = React.useState({
         show: false,
@@ -57,22 +55,41 @@ export default function CardFormCalculation({ children }) {
 
             cidadeSelecionada = [];
             cidades.forEach(element => {
-                if (removeAccents(element.NAME).includes(removeAccents(form.cidade))) {
+            if (removeAccents(element.NAME).includes(removeAccents(form.cidade))) {
                     cidadeSelecionada.push(element);
                 }
             })
 
-            if (cidadeSelecionada.length < 10) {
+            if (cidadeSelecionada.length < 15) {
                 setCity(cidadeSelecionada);
-                setShowModal(true);
-                console.log(cidadeSelecionada)
             }
 
         } else {
             cidadeSelecionada = [];
-            setShowModal(false);
+        }
+
+        if(form.cidade.includes('-')){
+            let cidadadeFinal = form.cidade.slice(0 , form.cidade.length-5)
+            let estadoFinal   = form.cidade.slice(form.cidade.length-2)
+
+            cidades.forEach(element => {
+                if (removeAccents(element.NAME) === removeAccents(cidadadeFinal) 
+                && removeAccents(element.STATE) === removeAccents(estadoFinal)) {
+                        handleCity(element.NAME, element)
+                    }
+            })
         }
     }, [form.cidade]);
+
+
+    const handleCity = (cityChosen,cidade) => {
+        setForm({
+            ...form,
+            cidadeObj: cidade
+        });
+
+        console.log(form.cidadeObj.NAME)
+    }
 
 
     const handleChange = (event) => {
@@ -81,19 +98,20 @@ export default function CardFormCalculation({ children }) {
             ...form,
             [event.target.name]: event.target.value
         });
+
     }
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (form.cidade === '' || form.cidadeObj === {} ||
+        if (form.cidade === '' || form.cidadeObj.NAME === undefined ||
             form.consumo === '' || form.inclinacao === '' ||
             form.ligacao === '' || form.orientacao === '' ||
             form.temperatura === '') {
             setWarning({
                 show: true,
-                message: 'Preencha todos os campos'
+                message: 'Preencha todos os campos corretamente'
             });
             setTimeout(() => {
                 setWarning({
@@ -121,20 +139,23 @@ export default function CardFormCalculation({ children }) {
 
                 <div className="input__group">
                     <input
+                        list='listaCidades'
                         className='input__calculation'
                         type="text"
                         placeholder='DIGITE A CIDADE'
                         name='cidade'
                         value={form.cidade}
                         onChange={handleChange} />
-                    <img className='input__image' src={iconSearch} alt="" />
-                </div>
+                        <datalist id="listaCidades">
+                        {city.map(item => (
+                        <option className='item__cidade'
+                        key={item.NAME + item.STATE}>{item.NAME} - {item.STATE}</option>
+                        ))} 
+                        </datalist>
 
-                <div className='modal__city'>
-                   {showModal && <ModalCidades cidades={city}
-                        form={form}
-                        setForm={setForm}
-                    />}
+
+
+                    <img className='input__image' src={iconSearch} alt="" />
                 </div>
 
                 <div className="input__group">
@@ -201,7 +222,7 @@ export default function CardFormCalculation({ children }) {
                     <img className='input__image' src={iconInclination} alt="" />
                 </div>
 
-                {warning.show && <span className='warning-calculo'>{warning.message}</span>}
+                {warning.show && <p className='warning-calculo'>{warning.message}</p>}
 
                 <button className='btn__calculation'>
                     <a className='button__link-calculation'>CALCULAR </a>
