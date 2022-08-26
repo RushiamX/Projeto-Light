@@ -54,9 +54,18 @@ export default function CardFormResult() {
                 <p className='result__text'>8,62 Kw/h</p>
             </div>
 
+            <div className="result__equipamento">
+                <h3>Selecionar Equipamento</h3>
+            </div>
+
+
             <div className="result__valor">
                 <h3 className='result__title'>Valor do Orçamento</h3>
                 <p className='result__text'>R$ 25.000,00</p>
+            </div>
+
+            <div className="result__salvar">
+                <h3>Salvar Orçamento</h3>
             </div>
 
         </div>
