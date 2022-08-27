@@ -9,7 +9,7 @@ export default function FooterLogged() {
   return (
     
       <div className='FooterL'>
-        <Link className='btnFooter' to='/Historico'>
+        <Link className='btnFooter' to='/History'>
           <img className='image__clock' src={ClockBtn} alt="historico" />
         </Link>
         <Link className='btnFooter' to='/Calculation'>
