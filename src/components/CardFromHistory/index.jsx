@@ -1,6 +1,6 @@
 import './style.css'
 import React, {useState } from 'react';
-
+import ClockBtn from '../../assets/images/clock-history.png'
 
 
 export default function CardFromHistory({ children }) {
@@ -21,8 +21,9 @@ export default function CardFromHistory({ children }) {
 
     return (
         <div className="card__history">
-            <div className="div-title">
-                <h4 className="title-card">histórico de uso</h4>
+            <div className="div-title_history">
+                <h6 className="title-card_history">histórico de uso</h6>
+                <img className='image__clock_history' src={ClockBtn} alt="historico" />
             </div>
             <div className='card-dados'>
                 <p className="dados-history">Ligaçõa: {dadosAtuais.ligacao}</p>
