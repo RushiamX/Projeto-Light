@@ -7,10 +7,27 @@ export default function CardFromHistory({ children }) {
 
     const [orcamentos, setOrcamentos] = React.useState([]);
 
+    const [warning, setWarning] = React.useState({
+        show: false,
+        message: ''
+    });
+
+
     const orc = JSON.parse(localStorage.getItem('orcamentosRealizados'));
 
     React.useEffect(() => {
-        setOrcamentos(orc)
+       if(orc){
+           setOrcamentos(orc)
+           setWarning({
+            show: false,
+            message: ''
+        });
+       }else{
+        setWarning({
+            show: true,
+            message: 'Nenhum Orçamento Realizado'
+        });
+       }
     }, []);
 
 
@@ -20,6 +37,8 @@ export default function CardFromHistory({ children }) {
                 <h6 className="title-card_history">histórico de uso</h6>
                 <img className='image__clock_history' src={ClockBtn} alt="historico" />
             </div>
+
+            {warning.show && <p className='warning__history'>{warning.message}</p>}
 
             {orcamentos.map(item => (
             <div className='card-dados-history'>

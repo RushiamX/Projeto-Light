@@ -50,6 +50,12 @@
   color: #000000;
 }
 
+.warning__history{
+  text-align: center;
+  font-size: 16px;
+  margin: 15px 0px;
+}
+
 @media screen and (max-height: 600px) {
   .card__history {
     width: 270px;
