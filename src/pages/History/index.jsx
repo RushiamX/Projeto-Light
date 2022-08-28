@@ -12,9 +12,9 @@ export default function History() {
             <div className="main__history">
                 <CardFromHistory />
             </div>
-      
+
             <FooterLogged />
-           
+
         </Container>
     );
 };

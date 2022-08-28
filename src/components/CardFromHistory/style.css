@@ -4,20 +4,24 @@
   background-color: #e9ecef;
   border-radius: 10px 10px;
   width: 300px;
-  height: 400px;
+  height: auto;
   flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+  overflow: auto;
 }
 
-.div-title {
+.div-title_history {
   border-radius: 10px 10px 0 0;
   background-color: #5fbcfa;
-  height: 52px;
-  align-items: center;
+  height: 60px;
   display: flex;
+  align-items: center;
   justify-content: center;
+  align-content: center;
 }
 
-.title-card {
+.title-card_history {
   font-family: "Nunito", sans-serif;
   text-transform: uppercase;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -26,13 +30,14 @@
   font-size: 16px;
 }
 
-.card-dados {
+.card-dados-history {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin-top: 20px;
   gap: 5px;
+  cursor: pointer;
 }
 
 .dados-history {
@@ -40,7 +45,83 @@
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 16px;
 
   color: #000000;
+}
+
+@media screen and (max-height: 600px) {
+  .card__history {
+    width: 270px;
+    height: auto;
+  }
+
+  .div-title_history {
+    align-items: center;
+  }
+
+  .image__clock_history {
+    height: 40px;
+  }
+
+  .title-card_history {
+    font-size: 12px;
+  }
+
+  .card-dados-history {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .dados-history {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-height: 670px) {
+  .card__history {
+    width: 240px;
+    height: auto;
+  }
+
+  .div-title_history {
+    align-items: center;
+  }
+
+  .image__clock_history {
+    height: 40px;
+  }
+
+  .title-card_history {
+    font-size: 12px;
+  }
+
+  .card-dados-history {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .dados-history {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-height: 700px) {
+  .card__history {
+    width: 300px;
+    height: auto;
+  }
+
+  .title-card {
+    font-size: 16px;
+  }
+
+  .card-dados-history{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .dados-history {
+    font-size: 14px;
+  }
 }

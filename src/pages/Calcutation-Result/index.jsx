@@ -4,7 +4,6 @@ import Container from '../../components/Container';
 import FooterLogged from '../../components/FooterLogged';
 import CardFormResult from '../../components/CardFormResult';
 
-
 export default function Results() {
     return(
         <Container>

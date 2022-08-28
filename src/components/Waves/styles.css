@@ -4,8 +4,17 @@
   display: flex;
   position: absolute;
   z-index: -1;
+  margin-top: 67px;
 }
 
 .teste_waves{
   width: 100%;
+  display: flex;
+}
+
+@media screen and (max-height: 700px) {
+  .group__waves{
+    margin-top: 60px;
+    height: 140px
+  }
 }

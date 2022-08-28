@@ -1,36 +1,37 @@
 import './style.css'
 import React, {useState } from 'react';
+import ClockBtn from '../../assets/images/clock-history.png'
 
 
+export default function CardFromHistory({ children }) {     
 
-export default function CardFromHistory({ children }) {
+    const [orcamentos, setOrcamentos] = React.useState([]);
 
-
-
-    const [dadosAtuais, setDadosAtuais] = React.useState({
-    });
-
-    const calculoAtual = JSON.parse(localStorage.getItem('calculoAtual'));
+    const orc = JSON.parse(localStorage.getItem('orcamentosRealizados'));
 
     React.useEffect(() => {
-        setDadosAtuais(calculoAtual)
-
+        setOrcamentos(orc)
     }, []);
-
 
 
     return (
         <div className="card__history">
-            <div className="div-title">
-                <h4 className="title-card">histórico de uso</h4>
+            <div className="div-title_history">
+                <h6 className="title-card_history">histórico de uso</h6>
+                <img className='image__clock_history' src={ClockBtn} alt="historico" />
             </div>
-            <div className='card-dados'>
-                <p className="dados-history">Ligaçõa: {dadosAtuais.ligacao}</p>
-                <p className="dados-history">Consumo Mensal: {dadosAtuais.consumo}</p>
-                <p className="dados-history">Potência Necessária: 8.62 KwP</p>
-                <p className="dados-history">{dadosAtuais.cidade}</p>
-                <p className="dados-history">12/07/2022</p>
+
+            {orcamentos.map(item => (
+            <div className='card-dados-history'>
+                <p className="dados-history">Cliente: {item.nomeCliente}</p>
+                <p className="dados-history">Telefone: {item.telefoneCliente}</p>
+                <p className="dados-history">Cidade: {item.dadosOrcamento.cidade}</p>
+                <p className="dados-history">Data:  {item.dataTime}</p>
+                <p className="dados-history">Potência:  {item.potenciaTotal}</p>
+                <p className="dados-history">Valor: R$ {item.valorOrcamento}</p>
             </div>
+                ))}
+
             {children}
         </div>
     )
