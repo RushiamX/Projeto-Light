@@ -1,7 +1,10 @@
 import React from 'react'
 import './styles.css'
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function ModalSalvarOrcamento(props){
+
+    const navigate = useNavigate();
 
     const[formSalvar, setFormSalvar] = React.useState({
         nomeCliente: '',
@@ -58,7 +61,16 @@ export default function ModalSalvarOrcamento(props){
     }, 3000);
     return;
 } else {
-    console.log(formSalvar)
+    let orcamentosRealizados = [];
+    if (localStorage.getItem('orcamentosRealizados')) {
+        orcamentosRealizados = JSON.parse(localStorage.getItem('orcamentosRealizados'));
+    };   
+    orcamentosRealizados.push(formSalvar);
+    localStorage.setItem('orcamentosRealizados', JSON.stringify(orcamentosRealizados));
+
+    setTimeout(() => {
+        navigate('/History');
+    }, 500);
 }
 
 
