@@ -55,7 +55,7 @@ export default function CardFormCalculation({ children }) {
 
             cidadeSelecionada = [];
             cidades.forEach(element => {
-            if (removeAccents(element.NAME).includes(removeAccents(form.cidade))) {
+                if (removeAccents(element.NAME).includes(removeAccents(form.cidade))) {
                     cidadeSelecionada.push(element);
                 }
             })
@@ -68,21 +68,21 @@ export default function CardFormCalculation({ children }) {
             cidadeSelecionada = [];
         }
 
-        if(form.cidade.includes('-')){
-            let cidadadeFinal = form.cidade.slice(0 , form.cidade.length-5)
-            let estadoFinal   = form.cidade.slice(form.cidade.length-2)
+        if (form.cidade.includes('-')) {
+            let cidadadeFinal = form.cidade.slice(0, form.cidade.length - 5)
+            let estadoFinal = form.cidade.slice(form.cidade.length - 2)
 
             cidades.forEach(element => {
-                if (removeAccents(element.NAME) === removeAccents(cidadadeFinal) 
-                && removeAccents(element.STATE) === removeAccents(estadoFinal)) {
-                        handleCity(element.NAME, element)
-                    }
+                if (removeAccents(element.NAME) === removeAccents(cidadadeFinal)
+                    && removeAccents(element.STATE) === removeAccents(estadoFinal)) {
+                    handleCity(element.NAME, element)
+                }
             })
         }
     }, [form.cidade]);
 
 
-    const handleCity = (cityChosen,cidade) => {
+    const handleCity = (cityChosen, cidade) => {
         setForm({
             ...form,
             cidadeObj: cidade
@@ -146,12 +146,12 @@ export default function CardFormCalculation({ children }) {
                         name='cidade'
                         value={form.cidade}
                         onChange={handleChange} />
-                        <datalist id="listaCidades">
+                    <datalist id="listaCidades">
                         {city.map(item => (
-                        <option className='item__cidade'
-                        key={item.NAME + item.STATE}>{item.NAME} - {item.STATE}</option>
-                        ))} 
-                        </datalist>
+                            <option className='item__cidade'
+                                key={item.NAME + item.STATE}>{item.NAME} - {item.STATE}</option>
+                        ))}
+                    </datalist>
 
 
 
