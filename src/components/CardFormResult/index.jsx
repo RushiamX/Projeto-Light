@@ -2,6 +2,7 @@ import './styles.css'
 
 import IconPlan from '../../assets/images/icon-plan.png'
 import React, { useState } from 'react';
+import ModalSalvarOrcamento from './ModalSalvarOrcamento';
 
 
 export default function CardFormResult() {
@@ -12,9 +13,7 @@ export default function CardFormResult() {
     const calculoAtual = JSON.parse(localStorage.getItem('calculoAtual'));
     React.useEffect(() => {
         setDadosAtuais(calculoAtual)
-
     }, []);
-
 
 
     return (
@@ -65,23 +64,7 @@ export default function CardFormResult() {
 
             </div>
 
-            {showModalOrcamento &&  <div className="modal__salvar-result">
-                
-                    <input className='input__salvar-orcamento' 
-                            type="text" name='name'
-                            value=""
-                            onChange=""
-                            placeholder='Nome do Cliente' />
-
-                    <input className='input__salvar-orcamento' 
-                            type="phone" name='telefone'
-                            value=""
-                            onChange=""
-                            placeholder='Telefone do Cliente' />
-
-                    <button className='btn__salvar-orcamento'>Salvar Orçamento</button>
-
-                    </div>  }
+            {showModalOrcamento &&  <ModalSalvarOrcamento/>}
 
          </div>
 
