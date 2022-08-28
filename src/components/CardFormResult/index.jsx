@@ -43,11 +43,11 @@ export default function CardFormResult() {
 
             <div className="form-result__result-components">
                 <div className='result'>
-                    <div className="result__potencia">
+                    <div className="result__group">
                         <h3 className='result__title'>Potência Necessária: </h3>
                         <p className='result__text'>8,62 Kw/h</p>
                     </div>
-                    <div className="result__valor">
+                    <div className="result__group">
                         <h3 className='result__title'>Valor do Orçamento: </h3>
                         <p className='result__text'>R$ 25.000,00</p>
                     </div>
