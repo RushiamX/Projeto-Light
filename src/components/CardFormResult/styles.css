@@ -1,5 +1,5 @@
+
 .card__Form-Result {
-  width: 300px;
   height: 450px;
 
   display: flex;
@@ -13,8 +13,11 @@
   z-index: 3;
 }
 
+
+
+
 .form-result__group-itens {
-  width: 300px;
+  width: 280px;
   height: 180px;
   display: flex;
   flex-direction: column;
@@ -175,7 +178,7 @@
 
 @media screen and (max-height: 665px) {
   .card__Form-Result {
-    width: 200px;
+    width: 280px;
     height: 200px;
   }
 
@@ -238,7 +241,7 @@
 
 @media screen and (min-height: 800px) {
   .card__Form-Result {
-    width: 310px;
+    width: 280px;
     height: 490px;
   }
 
@@ -253,7 +256,7 @@
 
 @media screen and (max-height: 740px) {
   .card__Form-Result {
-    width: 310px;
+    width: 280px;
     height: 400px;
   }
 
@@ -268,7 +271,7 @@
 
 @media screen and (max-height: 670px) {
   .card__Form-Result {
-    width: 250px;
+    width: 280px;
     height: 300px;
   }
 

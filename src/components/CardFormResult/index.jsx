@@ -20,7 +20,6 @@ export default function CardFormResult() {
 
         <div className="card__form-result-full">
 
-
             <div className="card__Form-Result">
                 <div className="div-title">
                     <h4 className="title-card">Resultado</h4>
@@ -64,7 +63,9 @@ export default function CardFormResult() {
 
             </div>
 
-            {showModalOrcamento &&  <ModalSalvarOrcamento/>}
+            {showModalOrcamento &&  <ModalSalvarOrcamento 
+            dadosAtuais={dadosAtuais} 
+            setDadosAtuais={setDadosAtuais} />}
 
          </div>
 
