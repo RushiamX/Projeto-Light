@@ -10,6 +10,8 @@ export default function ModalSalvarOrcamento(props){
         nomeCliente: '',
         telefoneCliente: '',
         dataTime: '',
+        potenciaTotal: '',
+        valorOrcamento: '',
         dadosOrcamento: {}
     });
 
@@ -31,11 +33,11 @@ export default function ModalSalvarOrcamento(props){
         setFormSalvar({
             ...formSalvar,
             dataTime: horaOrcamento,
+            potenciaTotal: "350 KW/h",
+            valorOrcamento: 25000,
             dadosOrcamento: props.dadosAtuais
-            
         });
     }, []);
-
 
     const handleChange = (event) => {
         event.preventDefault();
