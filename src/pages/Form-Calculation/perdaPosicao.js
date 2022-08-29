@@ -63,6 +63,6 @@ let perda = [[0.2, 0.5,	1.25,	2.05,	2.41,	2.05,	1.25,	0.5],
 [5.21,	6.09,	9.27,	14.62,	17.75,	14.62,	9.27,	6.09]
 ]
 
-return perda[inclinacao,orientacao]
+return (perda[inclinacao,orientacao])/100
 
 }
