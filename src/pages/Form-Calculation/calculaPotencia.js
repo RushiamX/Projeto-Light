@@ -1,9 +1,10 @@
 
-function calculaPotencia(consumoMensal, ligacao, irradiacao, temperatura){
+import { perdaPosicao } from "./perdaPosicao";
+
+export function calculaPotencia(consumoMensal, ligacao, irradiacao, temperatura, inclinacao, orientacao){
   let perdasPadrao = 0.073;
-  let perdaPosicao = 0.022
   let perdaTermica = (temperatura+5)*0.0039
-  let perdaTotal = perdasPadrao + perdaTermica + perdaPosicao
+  let perdaTotal = perdasPadrao + perdaTermica + perdaPosicao(inclinacao, orientacao)
   let rendimento = 1 - perdaTotal;
 
   switch(ligacao){
