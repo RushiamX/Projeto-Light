@@ -8,13 +8,13 @@ export function calculaPotencia(consumoMensal, ligacao, irradiacao, temperatura,
   let rendimento = 1 - perdaTotal;
 
   switch(ligacao){
-    case 'monofásica':
+    case 'Monofásico':
       ligacao = 30;
       break;
-    case 'bifásica':
+    case 'Bifásico':
       ligacao = 50;
       break;
-    case 'trifásica':
+    case 'Trifásico':
       ligacao = 100;
       break;
       default:
