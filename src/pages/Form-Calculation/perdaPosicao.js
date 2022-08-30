@@ -25,28 +25,28 @@ export function perdaPosicao(inclinacao, orientacao){
   }
 
   switch (orientacao) {
-    case 'norte':
+    case 'Norte':
       orientacao=0;
       break;
-    case 'nordeste':
+    case 'Nordeste':
       orientacao=1;
       break;
-    case 'leste':
+    case 'Leste':
       orientacao=2;
       break;
-    case 'sudeste':
+    case 'Sudeste':
       orientacao=3;
       break;
-    case 'sul':
+    case 'Sul':
       orientacao=4;
       break;
-    case 'sudoeste':
+    case 'Sudoeste':
       orientacao=5;
       break;
-    case 'oeste':
+    case 'Oeste':
       orientacao=6;
       break;
-    case 'noroeste':
+    case 'Noroeste':
       orientacao=7;
       break;
   
