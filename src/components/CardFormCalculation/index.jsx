@@ -155,7 +155,7 @@ export default function CardFormCalculation({ children }) {
 
 
 
-                    <img className='input__image' src={iconSearch} alt="" />
+                    <img className='input__image' src={iconSearch} alt="Lupa de procura" />
                 </div>
 
                 <div className="input__group">
@@ -169,7 +169,7 @@ export default function CardFormCalculation({ children }) {
                             <option key={ligacao} value={ligacao}>{ligacao}</option>
                         ))}
                     </select>
-                    <img className='input__image' src={iconLight} alt="" />
+                    <img className='input__image' src={iconLight} alt="Símbolo de raio (energia)" />
                 </div>
 
                 <div className="input__group">
@@ -180,7 +180,7 @@ export default function CardFormCalculation({ children }) {
                         value={form.consumo}
                         onChange={handleChange} />
 
-                    <img className='input__image' src={iconLamp} alt="" />
+                    <img className='input__image' src={iconLamp} alt="Lâmpada" />
                 </div>
 
                 <div className="input__group">
@@ -191,7 +191,7 @@ export default function CardFormCalculation({ children }) {
                         value={form.temperatura}
                         onChange={handleChange} />
 
-                    <img className='input__image' src={iconTemperatura} alt="" />
+                    <img className='input__image' src={iconTemperatura} alt="Símbolo de temperatura" />
                 </div>
 
                 <div className="input__group">
@@ -205,7 +205,7 @@ export default function CardFormCalculation({ children }) {
                             <option key={orientacao} value={orientacao}>{orientacao}</option>
                         ))}
                     </select>
-                    <img className='input__image' src={iconConpass} alt="" />
+                    <img className='input__image' src={iconConpass} alt="Símpulo de búlssola" />
                 </div>
 
                 <div className="input__group">
@@ -219,17 +219,16 @@ export default function CardFormCalculation({ children }) {
                             <option key={inc} value={inc}>{inc}</option>
                         ))}
                     </select>
-                    <img className='input__image' src={iconInclination} alt="" />
+                    <img className='input__image' src={iconInclination} alt="Símbolo de inclinação" />
                 </div>
 
                 {warning.show && <p className='warning-calculo'>{warning.message}</p>}
 
                 <button className='btn__calculation'>
                     <a className='button__link-calculation'>CALCULAR </a>
-                    <img className='input__image' src={iconCalc} alt="" />
+                    <img className='input__image' src={iconCalc} alt="Símbolo de Calculadora" />
                 </button>
-
-
+                
                 {children}
             </div>
         </form>

@@ -62,8 +62,9 @@ export default function CardFormResult() {
                             </div>
                         </div>
                         <div className="result__salvar">
-                            <h3 className='salvar_orcamento'
-                            onClick={() => setShowModalOrcamento(!showModalOrcamento)}>Salvar Orçamento</h3>
+                            <h3 className='salvar_orcamento' onClick={() => setShowModalOrcamento(!showModalOrcamento)}>
+                                Salvar Orçamento
+                            </h3>
                         </div>
                     </div>
     
@@ -74,6 +75,6 @@ export default function CardFormResult() {
                 setDadosAtuais={setDadosAtuais} />}
     
              </div>
-        )
+        );
     
-}
+};

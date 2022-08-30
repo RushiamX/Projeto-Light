@@ -24,14 +24,14 @@ export default function HeaderLogged() {
   return (
     <div className='HeaderLogged'>
       <Link className="header__btn" to=''>
-        <img  src={btnLeft}  className='img__left' onClick={toback}/>
+        <img  src={btnLeft}  className='img__left' onClick={toback} alt='Voltar a tela anterior' title='Voltar'/>
       </Link>
       <div className='header__'>
-        <img className="header__logo" src={headerLogo} alt="" />
+        <img className="header__logo" src={headerLogo} alt="Logo da equipe" />
         <p className='header__title'>Team Light</p>
       </div>
       <Link className="header__btn" to=''>
-        <img src={btnLogout} className='img__logout' onClick={logout}/>
+        <img src={btnLogout} className='img__logout' onClick={logout} alt='Logout' title='Logout'/>
       </Link>
 
     </div>

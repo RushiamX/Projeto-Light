@@ -7,7 +7,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* border-top:  1px solid black; */
 
   box-shadow: 0 0 1em rgb(160, 159, 159);
 }
@@ -25,14 +24,3 @@
   font-size: 9px;
   line-height: 14px;
 }
-
-/* @media only screen and (max-height: 800px) {
-  .Footer{
-    height: 65px;
-  }
-  .footer__logo {
-    width: 200px;
-    height: 75px;
-  }
-  
-} */
