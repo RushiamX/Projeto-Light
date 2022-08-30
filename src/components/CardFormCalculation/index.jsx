@@ -232,6 +232,5 @@ export default function CardFormCalculation({ children }) {
                 {children}
             </div>
         </form>
-    )
-
-}
+    );
+};
