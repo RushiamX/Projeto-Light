@@ -13,6 +13,7 @@ import iconTemperatura from '../../assets/images/icon-temperatura.png'
 import cidadesJson from '../../jsonFiles/irradiacaoMunicipal.json'
 
 import { useNavigate, Link } from 'react-router-dom';
+import { calculaPotencia } from '../../pages/Form-Calculation/calculaPotencia.js';
 
 
 export default function CardFormCalculation({ children }) {
@@ -33,7 +34,8 @@ export default function CardFormCalculation({ children }) {
         temperatura: '',
         orientacao: '',
         inclinacao: '',
-        cidadeObj: {}
+        cidadeObj: {},
+        potenciaCalculada: ''
     });
 
     const [city, setCity] = React.useState([]);
@@ -121,9 +123,14 @@ export default function CardFormCalculation({ children }) {
             }, 3000);
             return;
         } else {
+            // let calc = calculaPotencia(500, 'Monofásico', 5.3, 32, 10, 'Leste')
+            let calc = calculaPotencia(parseInt(form.consumo), form.ligacao, parseFloat(form.cidadeObj.ANNUAL/1000), parseInt(form.temperatura), parseInt(form.inclinacao), form.orientacao)
+            setForm({
+                ...form,
+                potenciaCalculada: calc
+            })
             localStorage.setItem('calculoAtual', JSON.stringify(form))
             navigate('/Result');
-
         }
 
     }
