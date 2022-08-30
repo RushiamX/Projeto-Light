@@ -10,7 +10,6 @@ export default function NavBar() {
                <img className="nav-logo" src={sun} alt="sun" />
                <span className='left'>TEAM LIGHT</span>
               <div className="nav-icon">
-          
                   <img className="nav-logo" src={headerLogo} alt="sun" />
               </div>
               <ul>

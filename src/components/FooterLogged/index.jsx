@@ -10,10 +10,10 @@ export default function FooterLogged() {
     
       <div className='FooterL'>
         <Link className='btnFooter' to='/History'>
-          <img className='image__clock' src={ClockBtn} alt="historico" />
+          <img className='image__clock' src={ClockBtn} alt="histórico" title='Histórico de Cálculos' />
         </Link>
         <Link className='btnFooter' to='/Calculation'>
-          <img className='image__calc' src={CalculatorBtn} alt="calculadora" />
+          <img className='image__calc' src={CalculatorBtn} alt="calculadora" title='Calcular novamente' />
         </Link>
       </div>
 

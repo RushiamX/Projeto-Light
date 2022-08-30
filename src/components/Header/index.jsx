@@ -7,16 +7,12 @@ import iconExit from '../../assets/images/icon-exit.png'
 
 export default function Header() {
   return (
-		<div>
-		<div className='Header'>
-    	{/* <img className="header__icon-left" src={iconLeft} alt="" /> */}
-			<div className="group__header-logo">
-			<img className="header__logo" src={headerLogo} alt="" />
+	<div className='Header'>
+		<div className="group__header-logo">
+			<img className="header__logo" src={headerLogo} alt="Logo da Equipe" />
 			<h2 className='header__title'>Team Light</h2>
-			</div>
-		{/* <img className="header__icon-exit" src={iconExit} alt="" /> */}
+		</div>
 
-    </div>
-		</div>	
+    </div>	
 	);
-}
+};
