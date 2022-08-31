@@ -51,7 +51,7 @@ export default function CardFormResult() {
                         <div className='result'>
                             <div className="result__group">
                                 <h3 className='result__title'>Potência Necessária: </h3>
-                                <p className='result__text'>8,62 Kw/h</p>
+                                <p className='result__text'>{dadosAtuais.potenciaCalculada.toFixed(3)} kwp</p>
                             </div>
                             <div className="result__group">
                                 <h3 className='result__title'>Valor do Orçamento: </h3>
