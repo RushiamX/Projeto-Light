@@ -1,19 +1,23 @@
 
-function calculaPotencia(consumoMensal, ligacao, irradiacao, temperatura){
+import { perdaPosicao } from "./perdaPosicao";
+
+export function calculaPotencia(consumoMensal, ligacao, irradiacao, temperatura, inclinacao, orientacao){
   let perdasPadrao = 0.073;
-  let perdaPosicao = 0.022
   let perdaTermica = (temperatura+5)*0.0039
-  let perdaTotal = perdasPadrao + perdaTermica + perdaPosicao
+  let perdaTotal = perdasPadrao + perdaTermica + perdaPosicao(inclinacao, orientacao)
   let rendimento = 1 - perdaTotal;
+  
+  // var ligacao = 0;
 
   switch(ligacao){
-    case 'monofásica':
+    case 'Monofásico':
       ligacao = 30;
+      // console.log("entrou no case");
       break;
-    case 'bifásica':
+    case 'Bifásico':
       ligacao = 50;
       break;
-    case 'trifásica':
+    case 'Trifásico':
       ligacao = 100;
       break;
       default:
@@ -21,7 +25,15 @@ function calculaPotencia(consumoMensal, ligacao, irradiacao, temperatura){
   }
   
 
-  resultado = ((consumoMensal - ligacao)/30)/(irradiacao*rendimento)
-
+  // let resultado = ((consumoMensal - ligacao)/30)/(irradiacao*rendimento)
+  let resultado = ((consumoMensal - 30)/30)/(irradiacao*rendimento)
+  // console.log(consumoMensal);
+  // console.log(ligacaoIN);
+  // console.log(ligacao);
+  // console.log(irradiacao);
+  // console.log(temperatura);
+  // console.log(inclinacao);
+  // console.log(orientacao);
+  // console.log(((consumoMensal - ligacao)/30)/(irradiacao*rendimento));
   return resultado
 }

@@ -51,7 +51,7 @@ export default function CardFormResult() {
                         <div className='result'>
                             <div className="result__group">
                                 <h3 className='result__title'>Potência Necessária: </h3>
-                                <p className='result__text'>8,62 Kw/h</p>
+                                <p className='result__text'>{dadosAtuais.potenciaCalculada.toFixed(3)} kwp</p>
                             </div>
                             <div className="result__group">
                                 <h3 className='result__title'>Valor do Orçamento: </h3>
@@ -62,8 +62,9 @@ export default function CardFormResult() {
                             </div>
                         </div>
                         <div className="result__salvar">
-                            <h3 className='salvar_orcamento'
-                            onClick={() => setShowModalOrcamento(!showModalOrcamento)}>Salvar Orçamento</h3>
+                            <h3 className='salvar_orcamento' onClick={() => setShowModalOrcamento(!showModalOrcamento)}>
+                                Salvar Orçamento
+                            </h3>
                         </div>
                     </div>
     
@@ -74,6 +75,6 @@ export default function CardFormResult() {
                 setDadosAtuais={setDadosAtuais} />}
     
              </div>
-        )
+        );
     
-}
+};
