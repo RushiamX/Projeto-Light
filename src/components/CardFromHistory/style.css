@@ -43,9 +43,8 @@
 .dados-history {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 20px;
+  font-weight: 500;
+  font-size: 16px;
 
   color: #000000;
 }
@@ -58,7 +57,7 @@
 
 @media screen and (max-height: 600px) {
   .card__history {
-    width: 270px;
+    width: 280px;
     height: auto;
   }
 
@@ -71,7 +70,7 @@
   }
 
   .title-card_history {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .card-dados-history {
@@ -86,7 +85,7 @@
 
 @media screen and (max-height: 670px) {
   .card__history {
-    width: 240px;
+    width: 280px;
     height: auto;
   }
 
@@ -114,7 +113,7 @@
 
 @media screen and (min-height: 700px) {
   .card__history {
-    width: 300px;
+    width: 280px;
     height: auto;
   }
 

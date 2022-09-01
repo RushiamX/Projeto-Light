@@ -71,9 +71,9 @@ export default function CardFormResult() {
                                 <h3 className='result__title'>Valor do Orçamento: </h3>
                                 <p className='result__text'>R$ {(potenciaResultante * 3100).toFixed(2)}</p>
                             </div>
-                            <div className="result__equipamento">
+                            {/* <div className="result__equipamento">
                                 <h3 className='select_equip'>Selecionar Equipamento</h3>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="result__salvar">
                             <h3 className='salvar_orcamento' onClick={() => setShowModalOrcamento(!showModalOrcamento)}>
