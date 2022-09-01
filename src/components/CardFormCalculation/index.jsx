@@ -13,7 +13,6 @@ import iconTemperatura from '../../assets/images/icon-temperatura.png'
 import cidadesJson from '../../jsonFiles/irradiacaoMunicipal.json'
 
 import { useNavigate, Link } from 'react-router-dom';
-import { calculaPotencia } from '../../pages/Form-Calculation/calculaPotencia.js';
 
 
 export default function CardFormCalculation({ children }) {
@@ -35,7 +34,6 @@ export default function CardFormCalculation({ children }) {
         orientacao: '',
         inclinacao: '',
         cidadeObj: {},
-        potenciaCalculada: ''
     });
 
     const [city, setCity] = React.useState([]);
@@ -53,24 +51,8 @@ export default function CardFormCalculation({ children }) {
     }
 
     React.useEffect(() => {
-        if (form.cidade.length > 2) {
-
-            cidadeSelecionada = [];
-            cidades.forEach(element => {
-                if (removeAccents(element.NAME).includes(removeAccents(form.cidade))) {
-                    cidadeSelecionada.push(element);
-                }
-            })
-
-            if (cidadeSelecionada.length < 15) {
-                setCity(cidadeSelecionada);
-            }
-
-        } else {
-            cidadeSelecionada = [];
-        }
-
-        if (form.cidade.includes('-')) {
+     
+       if (form.cidade.includes('-')) {
             let cidadadeFinal = form.cidade.slice(0, form.cidade.length - 5)
             let estadoFinal = form.cidade.slice(form.cidade.length - 2)
 
@@ -89,8 +71,6 @@ export default function CardFormCalculation({ children }) {
             ...form,
             cidadeObj: cidade
         });
-
-        console.log(form.cidadeObj.NAME)
     }
 
 
@@ -103,10 +83,8 @@ export default function CardFormCalculation({ children }) {
 
     }
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
-
         if (form.cidade === '' || form.cidadeObj.NAME === undefined ||
             form.consumo === '' || form.inclinacao === '' ||
             form.ligacao === '' || form.orientacao === '' ||
@@ -123,14 +101,10 @@ export default function CardFormCalculation({ children }) {
             }, 3000);
             return;
         } else {
-            // let calc = calculaPotencia(500, 'Monofásico', 5.3, 32, 10, 'Leste')
-            let calc = calculaPotencia(parseInt(form.consumo), form.ligacao, parseFloat(form.cidadeObj.ANNUAL/1000), parseInt(form.temperatura), parseInt(form.inclinacao), form.orientacao)
-            setForm({
-                ...form,
-                potenciaCalculada: calc
-            })
+
             localStorage.setItem('calculoAtual', JSON.stringify(form))
             navigate('/Result');
+
         }
 
     }
@@ -152,9 +126,11 @@ export default function CardFormCalculation({ children }) {
                         placeholder='DIGITE A CIDADE'
                         name='cidade'
                         value={form.cidade}
-                        onChange={handleChange} />
-                    <datalist id="listaCidades">
-                        {city.map(item => (
+                        onChange={handleChange} 
+                        onComplete='false'/>
+                    <datalist 
+                    id="listaCidades">
+                        {cidades.map(item => (
                             <option className='item__cidade'
                                 key={item.NAME + item.STATE}>{item.NAME} - {item.STATE}</option>
                         ))}

@@ -12,6 +12,7 @@ export default function ModalSalvarOrcamento(props){
         dataTime: '',
         potenciaTotal: '',
         valorOrcamento: '',
+        potenciaResultante: '',
         dadosOrcamento: {}
     });
 
@@ -34,7 +35,8 @@ export default function ModalSalvarOrcamento(props){
             ...formSalvar,
             dataTime: horaOrcamento,
             potenciaTotal: "350 KW/h",
-            valorOrcamento: 25000,
+            valorOrcamento: (props.potenciaResultante * 3100).toFixed(2),
+            potenciaResultante: props.potenciaResultante,
             dadosOrcamento: props.dadosAtuais
         });
     }, []);
@@ -71,6 +73,7 @@ export default function ModalSalvarOrcamento(props){
     localStorage.setItem('orcamentosRealizados', JSON.stringify(orcamentosRealizados));
 
     setTimeout(() => {
+        localStorage.removeItem('calculoAtual');
         navigate('/History');
     }, 500);
 }
