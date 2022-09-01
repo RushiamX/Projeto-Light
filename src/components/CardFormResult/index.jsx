@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import ModalSalvarOrcamento from './ModalSalvarOrcamento';
 import { useNavigate, Link } from 'react-router-dom';
 
+import { calculaPotencia } from '../../pages/Form-Calculation/calculaPotencia.js';
 
 export default function CardFormResult() {
 
@@ -12,12 +13,25 @@ export default function CardFormResult() {
 
     const [dadosAtuais, setDadosAtuais] = React.useState({});
     const [showModalOrcamento, setShowModalOrcamento] = React.useState(false);
+    const [potenciaResultante, setPotenciaResultante] = React.useState();
 
     const calculoAtual = JSON.parse(localStorage.getItem('calculoAtual'));
 
+
     React.useEffect(() => {
         if(calculoAtual){
-            setDadosAtuais(calculoAtual)
+
+        setDadosAtuais(calculoAtual)
+
+        let calc = calculaPotencia(parseInt(calculoAtual.consumo),
+        calculoAtual.ligacao,
+        parseFloat(calculoAtual.cidadeObj.ANNUAL/1000), 
+        parseInt(calculoAtual.temperatura), 
+        parseInt(calculoAtual.inclinacao), 
+        calculoAtual.orientacao);
+
+        setPotenciaResultante(calc.toFixed(3))
+
         }else{
             navigate('/Calculation');
         }
@@ -34,7 +48,7 @@ export default function CardFormResult() {
     
                     <div className="form-result__group-itens">
                         <div className="group__info">
-                            <p className="group__info-tag">Consumo: </p>
+                            <p className="group__info-tag">Consumo Mensal: </p>
                             <p className="group__info-answer">{dadosAtuais.consumo} Kw/h</p>
                         </div>
                         <div className="group__info">
@@ -51,11 +65,11 @@ export default function CardFormResult() {
                         <div className='result'>
                             <div className="result__group">
                                 <h3 className='result__title'>Potência Necessária: </h3>
-                                <p className='result__text'>{dadosAtuais.potenciaCalculada.toFixed(3)} kwp</p>
+                                <p className='result__text'>{potenciaResultante} kwp</p>
                             </div>
                             <div className="result__group">
                                 <h3 className='result__title'>Valor do Orçamento: </h3>
-                                <p className='result__text'>R$ 25.000,00</p>
+                                <p className='result__text'>R$ {(potenciaResultante * 3100).toFixed(2)}</p>
                             </div>
                             <div className="result__equipamento">
                                 <h3 className='select_equip'>Selecionar Equipamento</h3>
@@ -72,7 +86,8 @@ export default function CardFormResult() {
     
                 {showModalOrcamento &&  <ModalSalvarOrcamento 
                 dadosAtuais={dadosAtuais} 
-                setDadosAtuais={setDadosAtuais} />}
+                setDadosAtuais={setDadosAtuais}
+                potenciaResultante={potenciaResultante} />}
     
              </div>
         );

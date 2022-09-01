@@ -46,7 +46,7 @@ export default function CardFromHistory({ children }) {
                 <p className="dados-history">Telefone: {item.telefoneCliente}</p>
                 <p className="dados-history">Cidade: {item.dadosOrcamento.cidade}</p>
                 <p className="dados-history">Data:  {item.dataTime}</p>
-                <p className="dados-history">Potência:  {item.potenciaTotal}</p>
+                <p className="dados-history">Potência:  {item.potenciaResultante} kwp</p>
                 <p className="dados-history">Valor: R$ {item.valorOrcamento}</p>
             </div>
                 ))}
