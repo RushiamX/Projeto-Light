@@ -34,7 +34,7 @@ export default function CardFromHistory({ children }) {
     return (
         <div className="card__history">
             <div className="div-title_history">
-                <h6 className="title-card_history">histórico de uso</h6>
+                <h6 className="title-card_history">histórico</h6>
                 <img className='image__clock_history' src={ClockBtn} alt="histórico" />
             </div>
 
