@@ -24,7 +24,6 @@ export default function CardLogin() {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(form);
         let users = [];
         if (localStorage.getItem('users')) {
             users = JSON.parse(localStorage.getItem('users'));

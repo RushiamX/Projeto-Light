@@ -41,7 +41,8 @@ export default function CardFromHistory({ children }) {
             {warning.show && <p className='warning__history'>{warning.message}</p>}
 
             {orcamentos.map(item => (
-            <div className='card-dados-history'>
+            <div className='card-dados-history'
+            key={item.dataTime}>
                 <p className="dados-history">Cliente: {item.nomeCliente}</p>
                 <p className="dados-history">Telefone: {item.telefoneCliente}</p>
                 <p className="dados-history">Cidade: {item.dadosOrcamento.cidade}</p>

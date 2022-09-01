@@ -32,7 +32,7 @@ export default function MyRoutes() {
         <Route path='/Result' element={<Result />} />
         </Route>
 
-        <Route path='/Help' element={<Help/>} />
+        {/* <Route path='/Help' element={<Help/>} /> */}
         
       </Routes>
     </BrowserRouter>
