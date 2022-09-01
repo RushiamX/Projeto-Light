@@ -1,6 +1,6 @@
 
 .card__Form-Result {
-  height: 450px;
+  height: 330px;
 
   display: flex;
   flex-direction: column;
@@ -14,16 +14,14 @@
 }
 
 
-
-
 .form-result__group-itens {
   width: 280px;
-  height: 180px;
+  height: 190px;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* justify-content: space-around; */
-    gap: 25px;
+  gap: 25px;
   padding-top: 20px;
 }
 
@@ -72,20 +70,17 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 18px;
 }
 
 .group__info-answer {
-  width: 160px;
-
+  width: 140px;
   font-family: "Nunito";
   font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 13px;
   line-height: 16px;
-  display: flex;
-  align-items: center;
   text-align: center;
 }
 
@@ -107,11 +102,12 @@
   box-shadow: 0px 4px 4px rgba(9, 150, 33, 0.671);
   height: 150px;
   justify-content: center;
+  padding: 5px 0px;
 }
 
 .result__group {
-  width: 260px;
-  height: 60px;
+  width: 240px;
+  height: 80px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -125,22 +121,19 @@
 }
 
 .result__title {
-
   color: #000000;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 14px;
   text-align: center;
 }
 
 .result__text {
   font-family: "Nunito";
   font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 16px;
+  font-weight: 500;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -166,16 +159,17 @@
   width: 100%;
   text-align: center;
   height: 30px;
+  margin-top: 10px;
 }
 
 .salvar_orcamento {
   font-family: "Poppins";
   font-style: normal;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
 }
 
-@media screen and (max-height: 665px) {
+/* @media screen and (max-height: 665px) {
   .card__Form-Result {
     width: 280px;
     height: 200px;
@@ -310,4 +304,4 @@
     font-size: 11px;
     padding-top: 10px;
   }
-}
+} */
